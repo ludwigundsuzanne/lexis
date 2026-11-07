@@ -1,0 +1,11 @@
+node_modules
+dist
+dev-dist
+.playwright-mcp
+*.log
+tsconfig.tsbuildinfo
+sources/
+__pycache__
+.agents/
+.claude/
+skills-lock.json

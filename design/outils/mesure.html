@@ -1,0 +1,103 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Mesure du logo</title></head>
+<body>
+<!-- Outil : mesure les bords réels du logo original et recalcule les courbes de Bézier
+     par moindres carrés. Lancer window.measure() depuis la console. -->
+<script>
+const IMG = new Image();
+IMG.src = '../assets/logo-original.jpg';
+const ready = new Promise((r) => (IMG.onload = r));
+
+// Repère 800 × 800 du tracé → pixels de l'image source (1024 px)
+const toSrc = (X, Y) => [(X + 624) / 2, (Y + 620) / 2];
+
+let data, W;
+async function load() {
+  await ready;
+  const c = document.createElement('canvas');
+  c.width = IMG.width; c.height = IMG.height; W = IMG.width;
+  const g = c.getContext('2d');
+  g.drawImage(IMG, 0, 0);
+  data = g.getImageData(0, 0, c.width, c.height).data;
+}
+function lumAt(x, y) { // bilinéaire
+  const x0 = Math.floor(x), y0 = Math.floor(y), fx = x - x0, fy = y - y0;
+  const L = (i, j) => { const k = ((j) * W + (i)) * 4; return 0.299 * data[k] + 0.587 * data[k + 1] + 0.114 * data[k + 2]; };
+  return L(x0, y0) * (1 - fx) * (1 - fy) + L(x0 + 1, y0) * fx * (1 - fy) + L(x0, y0 + 1) * (1 - fx) * fy + L(x0 + 1, y0 + 1) * fx * fy;
+}
+const lum800 = (X, Y) => { const [x, y] = toSrc(X, Y); return lumAt(x, y); };
+const THRESH = 145;
+
+const bez = (p, t) => {
+  const u = 1 - t;
+  return [0, 1].map((i) => u * u * u * p[0][i] + 3 * u * u * t * p[1][i] + 3 * u * t * t * p[2][i] + t * t * t * p[3][i]);
+};
+const bezD = (p, t) => {
+  const u = 1 - t;
+  return [0, 1].map((i) => 3 * u * u * (p[1][i] - p[0][i]) + 6 * u * t * (p[2][i] - p[1][i]) + 3 * t * t * (p[3][i] - p[2][i]));
+};
+
+// Bord le plus proche le long de la normale (±R), avec précision sous-pixel
+function edgeNear(P, N, R = 16) {
+  let best = null;
+  const step = 0.25;
+  let prev = lum800(P[0] - N[0] * R, P[1] - N[1] * R);
+  for (let s = -R + step; s <= R; s += step) {
+    const cur = lum800(P[0] + N[0] * s, P[1] + N[1] * s);
+    if ((prev - THRESH) * (cur - THRESH) < 0) {
+      const f = (THRESH - prev) / (cur - prev);
+      const ss = s - step + f * step;
+      if (!best || Math.abs(ss) < Math.abs(best)) best = ss;
+    }
+    prev = cur;
+  }
+  return best === null ? null : [P[0] + N[0] * best, P[1] + N[1] * best];
+}
+
+// Ajuste P1, P2 d'une cubique à extrémités fixes sur des points (paramétrage par longueur de corde)
+function fit(P0, P3, pts) {
+  const d = [0];
+  for (let i = 1; i < pts.length; i++) d.push(d[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+  const T = d.map((v) => v / d[d.length - 1]);
+  let a11 = 0, a12 = 0, a22 = 0, bx1 = 0, by1 = 0, bx2 = 0, by2 = 0;
+  T.forEach((t, i) => {
+    const u = 1 - t, b0 = u * u * u, b1 = 3 * u * u * t, b2 = 3 * u * t * t, b3 = t * t * t;
+    const rx = pts[i][0] - b0 * P0[0] - b3 * P3[0], ry = pts[i][1] - b0 * P0[1] - b3 * P3[1];
+    a11 += b1 * b1; a12 += b1 * b2; a22 += b2 * b2;
+    bx1 += b1 * rx; by1 += b1 * ry; bx2 += b2 * rx; by2 += b2 * ry;
+  });
+  const det = a11 * a22 - a12 * a12;
+  const P1 = [(bx1 * a22 - bx2 * a12) / det, (by1 * a22 - by2 * a12) / det];
+  const P2 = [(a11 * bx2 - a12 * bx1) / det, (a11 * by2 - a12 * by1) / det];
+  return [P0, P1, P2, P3];
+}
+
+window.measure = async (curves) => {
+  await load();
+  const out = {};
+  for (const [name, p] of Object.entries(curves)) {
+    const pts = [];
+    for (let i = 1; i < 40; i++) {
+      const t = i / 40, P = bez(p, t), D = bezD(p, t), n = Math.hypot(D[0], D[1]);
+      const e = edgeNear(P, [-D[1] / n, D[0] / n]);
+      if (e) pts.push(e);
+    }
+    const f = fit(p[0], p[3], [p[0], ...pts, p[3]]);
+    // écart moyen entre les points mesurés et la courbe ajustée
+    let err = 0;
+    pts.forEach((q) => { let m = 1e9; for (let k = 0; k <= 200; k++) { const b = bez(f, k / 200); m = Math.min(m, Math.hypot(b[0] - q[0], b[1] - q[1])); } err += m; });
+    out[name] = { c: f.map((q) => q.map((v) => Math.round(v * 2) / 2)), n: pts.length, err: +(err / pts.length).toFixed(2) };
+  }
+  return out;
+};
+
+window.colour = async (spots) => {
+  await load();
+  return spots.map(([X, Y]) => {
+    const [x, y] = toSrc(X, Y); let r = 0, g = 0, b = 0, n = 0;
+    for (let j = -4; j <= 4; j++) for (let i = -4; i <= 4; i++) { const k = ((Math.round(y) + j) * W + Math.round(x) + i) * 4; r += data[k]; g += data[k + 1]; b += data[k + 2]; n++; }
+    return [r / n, g / n, b / n].map((v) => Math.round(v));
+  });
+};
+</script>
+</body></html>

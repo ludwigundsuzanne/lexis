@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lexis — Direction artistique</title>
+<link rel="icon" href="logo/lexis-icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+/* ───────────── Tokens ───────────── */
+:root{
+  --forest:#22513F; --forest-deep:#173A2D; --cream:#E6D5C3;
+  --paper:#F3ECE2; --surface:#FBF7F1; --sunken:#ECE3D6;
+  --line:#DDD0BF; --line-strong:#C9B9A4;
+  --ink:#1C2B25; --ink-soft:#56635C; --ink-faint:#8A928C;
+  --primary-bg:#22513F; --primary-fg:#F6EFE6; --primary-hover:#1B4434;
+  --tint:#DCE5DC;
+  --copper:#92522A; --copper-line:#C98E62;
+  --gold:#7E5E12; --gold-tint:#F1E4C0;
+  --clay:#9B2C3B; --clay-tint:#F4DADC;
+  --mark:#22513F; --ground:#F3ECE2;
+  --shadow:0 1px 0 rgba(28,43,37,.04), 0 10px 30px -14px rgba(28,43,37,.22);
+  --serif:"Newsreader", Georgia, serif;
+  --sans:"Instrument Sans", system-ui, sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0F201A; --surface:#152B23; --sunken:#0B1914;
+  --line:#24403A; --line-strong:#33554B;
+  --ink:#ECE2D6; --ink-soft:#A9B7AE; --ink-faint:#71837A;
+  --primary-bg:#E6D5C3; --primary-fg:#173A2D; --primary-hover:#F3E9DD;
+  --tint:#1F3D33;
+  --copper:#D9A074; --copper-line:#8E5E3C;
+  --gold:#E2BE62; --gold-tint:#3A3220;
+  --clay:#F2939F; --clay-tint:#3F2027;
+  --mark:#E6D5C3; --ground:#0F201A;
+  --shadow:0 1px 0 rgba(0,0,0,.2), 0 14px 34px -16px rgba(0,0,0,.6);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0F201A; --surface:#152B23; --sunken:#0B1914;
+  --line:#24403A; --line-strong:#33554B;
+  --ink:#ECE2D6; --ink-soft:#A9B7AE; --ink-faint:#71837A;
+  --primary-bg:#E6D5C3; --primary-fg:#173A2D; --primary-hover:#F3E9DD;
+  --tint:#1F3D33;
+  --copper:#D9A074; --copper-line:#8E5E3C;
+  --gold:#E2BE62; --gold-tint:#3A3220;
+  --clay:#F2939F; --clay-tint:#3F2027;
+  --mark:#E6D5C3; --ground:#0F201A;
+  --shadow:0 1px 0 rgba(0,0,0,.2), 0 14px 34px -16px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+
+/* ───────────── Base ───────────── */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;transition:background .3s var(--ease),color .3s var(--ease)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;margin:0}
+p{margin:0}
+.kicker{font:400 italic 16px/1.2 var(--serif);color:var(--copper)}
+.muted{color:var(--ink-soft)}
+.note{font-size:13.5px;color:var(--ink-soft);max-width:62ch}
+kbd{font:500 11px/1 var(--sans);padding:3px 6px;border:1px solid var(--line-strong);border-bottom-width:2px;border-radius:5px;color:var(--ink-soft);background:var(--surface)}
+
+/* Header */
+.top{display:flex;align-items:center;justify-content:space-between;padding:28px 0;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px}
+.wordmark{font:600 22px/1 var(--serif);letter-spacing:-.01em}
+.theme-btn{font:500 13px var(--sans);color:var(--ink-soft);background:none;border:1px solid var(--line-strong);border-radius:999px;padding:8px 14px;cursor:pointer;display:flex;gap:8px;align-items:center}
+.theme-btn:hover{color:var(--ink);border-color:var(--ink-faint)}
+.hero{padding:72px 0 56px;display:grid;grid-template-columns:1.7fr 1fr;gap:48px;align-items:end}
+.hero h1{font-size:clamp(38px,5.2vw,62px);line-height:1.04;font-weight:400;text-wrap:balance}
+.hero h1 em{font-style:italic;color:var(--forest)}
+:root[data-theme="dark"] .hero h1 em{color:var(--copper)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hero h1 em{color:var(--copper)}}
+.hero p{font-size:16px;color:var(--ink-soft)}
+
+/* Sections */
+section{padding:64px 0;border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:32px;margin-bottom:40px}
+.sec-num{font:400 italic 17px var(--serif);color:var(--ink-faint)}
+.sec-head h2{font-size:34px;line-height:1.1;margin-bottom:10px}
+
+/* ───────────── 01 Logo ───────────── */
+.logo-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative}
+.panel-label{font:500 13px var(--sans);color:var(--ink-faint);margin-bottom:18px}
+.orig-crop{width:220px;height:220px;overflow:hidden;border-radius:44px;margin:12px auto 0;position:relative}
+.orig-crop img{position:absolute;width:556px;left:-169px;top:-169px}
+.new-icon{display:block;margin:12px auto 0}
+.changes{margin:24px 0 0;padding:0;list-style:none;display:grid;gap:10px;font-size:14px}
+.changes li{display:grid;grid-template-columns:20px 1fr;gap:8px;color:var(--ink-soft)}
+.changes li b{color:var(--ink);font-weight:500}
+.changes li::before{content:"";width:7px;height:7px;margin-top:8px;background:var(--copper);transform:rotate(45deg)}
+.scales{display:flex;align-items:flex-end;gap:28px;flex-wrap:wrap}
+.scale{display:grid;justify-items:center;gap:8px;font-size:11.5px;color:var(--ink-faint)}
+.lockups{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.lockup{border-radius:14px;padding:30px 20px;display:flex;align-items:center;justify-content:center;gap:12px;min-height:120px}
+.lockup .wordmark{font-size:22px}
+.l-paper{background:#F3ECE2;--mark:#22513F;--ground:#F3ECE2;color:#1C2B25;border:1px solid var(--line)}
+.l-forest{background:#22513F;--mark:#E6D5C3;--ground:#22513F;color:#E6D5C3}
+.l-night{background:#0F201A;--mark:#E6D5C3;--ground:#0F201A;color:#E6D5C3}
+
+/* ───────────── 02 Couleurs ───────────── */
+.palette{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.sw{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.sw-chip{height:96px;display:flex;align-items:flex-end;padding:10px 12px;font:500 italic 22px var(--serif)}
+.sw-meta{padding:12px;font-size:12.5px;display:grid;gap:2px}
+.sw-meta b{font-weight:600;font-size:13px}
+.sw-meta code{font:500 12.5px var(--sans);font-variant-numeric:tabular-nums;color:var(--ink-faint)}
+.sw.big{grid-column:span 2}
+.sw.big .sw-chip{height:150px;font-size:34px;padding:16px 18px}
+.contrast-table{margin-top:28px;width:100%;border-collapse:collapse;font-size:13.5px}
+.contrast-table td,.contrast-table th{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left}
+.contrast-table th{font:500 13px var(--sans);color:var(--ink-faint)}
+.pair{display:inline-flex;align-items:center;justify-content:center;width:44px;height:26px;border-radius:6px;font:600 13px var(--serif);border:1px solid var(--line)}
+.ok{color:var(--forest);font-weight:600}
+:root[data-theme="dark"] .ok{color:var(--gold)}
+.semantic{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.sem{border-radius:14px;padding:18px;border:1px solid var(--line);background:var(--surface);display:grid;gap:6px;align-content:start}
+.sem h3{font-size:19px}
+
+/* ───────────── 03 Typo ───────────── */
+.type-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:24px}
+.specimen-word{font:400 clamp(56px,8vw,96px)/1 var(--serif);letter-spacing:-.02em}
+.specimen-italic{font:400 italic 22px/1.45 var(--serif);color:var(--ink-soft);margin-top:18px}
+.scale-row{display:grid;grid-template-columns:110px 1fr;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.scale-row:last-child{border:0}
+.scale-row span{font-size:11.5px;color:var(--ink-faint);letter-spacing:.04em}
+
+/* ───────────── 04 Composants ───────────── */
+.btn{font:500 14.5px var(--sans);border-radius:12px;padding:12px 18px;border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:transform .15s var(--ease),background .2s var(--ease),border-color .2s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--primary-bg);color:var(--primary-fg)}
+.btn-primary:hover{background:var(--primary-hover)}
+.btn-primary kbd{background:transparent;color:inherit;opacity:.7;border-color:currentColor}
+.btn-secondary{background:var(--surface);color:var(--ink);border-color:var(--line-strong)}
+.btn-secondary:hover{border-color:var(--ink-faint)}
+.btn-ghost{background:none;color:var(--ink-soft);padding-inline:10px}
+.btn-ghost:hover{color:var(--ink);background:var(--sunken)}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+
+/* Fiche de mot */
+.word-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+.wc-head{padding:30px 32px 22px;position:relative}
+.wc-head::after{content:"";position:absolute;left:32px;right:32px;bottom:0;height:1px;background:var(--line)}
+.wc-tags{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tag{font:500 11.5px var(--sans);padding:4px 9px;border-radius:999px;background:var(--sunken);color:var(--ink-soft)}
+.tag.reg{background:var(--tint);color:var(--forest)}
+:root[data-theme="dark"] .tag.reg{color:var(--ink)}
+.wc-word{font:600 50px/1 var(--serif);letter-spacing:-.02em}
+.wc-gram{font:400 italic 17px/1.45 var(--serif);color:var(--ink-soft);margin-top:10px}
+.wc-gram i{font-style:normal}
+.wc-gram .sc{font-style:normal;font-variant:small-caps;letter-spacing:.04em;color:var(--forest)}
+:root[data-theme="dark"] .wc-gram .sc{color:var(--gold)}
+.wc-phon{font:400 15px var(--serif);color:var(--ink-faint);margin-top:6px}
+.wc-body{padding:22px 32px 30px;display:grid;gap:22px}
+.wc-def{font:400 21px/1.4 var(--serif)}
+.wc-explain{font-size:14.5px;color:var(--ink-soft)}
+.wc-example{font:400 italic 18px/1.5 var(--serif);padding-left:16px;border-left:2px solid var(--copper-line)}
+.wc-example mark{background:none;color:inherit;font-style:normal;font-weight:500;box-shadow:inset 0 -.32em 0 var(--gold-tint)}
+.wc-label{font:400 italic 15px var(--serif);color:var(--copper);margin-bottom:6px}
+.wc-nuance{background:var(--sunken);border-radius:14px;padding:16px 18px;font-size:14px;display:grid;gap:8px}
+.wc-nuance div{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:baseline}
+.wc-nuance b{font:500 italic 16px var(--serif)}
+.wc-nuance b.self{color:var(--forest)}
+:root[data-theme="dark"] .wc-nuance b.self{color:var(--gold)}
+.wc-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;font:400 16px var(--serif)}
+.wc-warn{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:14px;color:var(--ink-soft)}
+.wc-warn svg{color:var(--clay);margin-top:2px}
+.src{font-size:11.5px;color:var(--ink-faint)}
+
+/* Exercices */
+.ex-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:30px 32px}
+.ex-type{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.ex-prompt{font:400 23px/1.45 var(--serif);margin-bottom:22px}
+.ex-prompt .blank{display:inline-block;min-width:130px;border-bottom:1.5px solid var(--ink-faint);transform:translateY(-4px)}
+.answer{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line-strong);border-radius:14px;padding:4px 6px 4px 16px;background:var(--paper)}
+.answer input{flex:1;border:0;background:none;font:400 20px var(--serif);color:var(--ink);padding:10px 0;outline:none;min-width:0}
+.answer:focus-within{border-color:var(--forest);box-shadow:0 0 0 4px var(--tint)}
+.feedback{margin-top:16px;border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:24px 1fr;gap:10px;font-size:14px}
+.feedback.good{background:var(--gold-tint)}
+.feedback.good svg{color:var(--gold)}
+.feedback.bad{background:var(--clay-tint)}
+.feedback.bad svg{color:var(--clay)}
+.feedback b{font:500 17px var(--serif);display:block}
+.ratings{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}
+.rate{border:1px solid var(--line-strong);background:var(--surface);border-radius:12px;padding:10px 6px 9px;display:grid;justify-items:center;gap:3px;cursor:pointer;font:500 13.5px var(--sans);color:var(--ink);transition:border-color .2s,background .2s}
+.rate small{font-size:11.5px;color:var(--ink-faint);font-weight:400}
+.rate:hover{border-color:var(--ink-faint);background:var(--sunken)}
+.rate.again{color:var(--clay)}
+.choices{display:grid;gap:10px}
+.choice{display:flex;align-items:center;gap:14px;border:1.5px solid var(--line-strong);border-radius:14px;padding:13px 16px;font:400 20px var(--serif);background:var(--surface);cursor:pointer;text-align:left;color:var(--ink);transition:border-color .2s,background .2s}
+.choice kbd{flex:none}
+.choice:hover{border-color:var(--ink-faint)}
+.choice.right{border-color:var(--gold);background:var(--gold-tint)}
+.choice.dim{opacity:.55}
+.choice .why{margin-left:auto;font:400 13px var(--sans);color:var(--ink-soft);text-align:right;max-width:52%}
+
+/* Progression */
+.progress{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--ink-faint)}
+.bar{flex:1;height:4px;border-radius:4px;background:var(--sunken);overflow:hidden}
+.bar i{display:block;height:100%;width:58%;background:var(--forest);border-radius:4px}
+:root[data-theme="dark"] .bar i{background:var(--cream)}
+.streak{display:flex;gap:6px;align-items:flex-end}
+.streak span{width:12px;height:18px;background:var(--line);clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%)}
+.streak span.on{background:var(--copper)}
+.streak span.today{background:var(--forest)}
+:root[data-theme="dark"] .streak span.today{background:var(--cream)}
+
+/* ───────────── 05 Icônes ───────────── */
+.icons{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
+.icon-cell{background:var(--surface);border:1px solid var(--line);border-radius:14px;aspect-ratio:1;display:grid;place-items:center;align-content:center;gap:10px;font-size:11.5px;color:var(--ink-faint)}
+.icon-cell svg{color:var(--ink)}
+.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linejoin:miter;stroke-linecap:square}
+
+/* ───────────── 06 Mouvement ───────────── */
+.motion-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.motion{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:14px;align-content:start}
+.motion h3{font-size:20px}
+.stage{height:150px;border-radius:12px;background:var(--sunken);display:grid;place-items:center;overflow:hidden;position:relative}
+.reveal-word{font:400 34px var(--serif);opacity:0;transform:translateY(14px)}
+.play .reveal-word{animation:rise .55s var(--ease) forwards}
+.reveal-def{font:400 italic 14px var(--serif);color:var(--ink-soft);opacity:0;transform:translateY(8px);text-align:center;max-width:22ch}
+.play .reveal-def{animation:rise .5s .18s var(--ease) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.ink-word{font:400 34px var(--serif);position:relative}
+.ink-word::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left}
+.play .ink-word::after{animation:ink .6s .1s var(--ease) forwards}
+@keyframes ink{to{transform:scaleX(1)}}
+.page-stack{position:relative;width:120px;height:80px}
+.page-stack div{position:absolute;inset:0;border-radius:10px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;font:400 18px var(--serif)}
+.page-stack .p1{transform:translate(8px,8px);opacity:.5}
+.page-stack .p2{transform:translate(4px,4px);opacity:.8}
+.play .page-stack .p3{animation:turn .6s var(--ease) forwards}
+@keyframes turn{60%{opacity:0;transform:translate(-40px,-6px) rotate(-6deg)}100%{opacity:0;transform:translate(-40px,-6px) rotate(-6deg)}}
+.motion .btn{justify-self:start}
+
+/* ───────────── 07 Écran ───────────── */
+.screen{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--paper);box-shadow:var(--shadow);display:grid;grid-template-columns:220px 1fr;min-height:560px}
+.side{border-right:1px solid var(--line);padding:24px 18px;display:flex;flex-direction:column;gap:28px;background:var(--surface)}
+.nav{display:grid;gap:4px}
+.nav a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:14px}
+.nav a.on{background:var(--tint);color:var(--forest)}
+:root[data-theme="dark"] .nav a.on{color:var(--ink)}
+.nav a:hover:not(.on){background:var(--sunken);color:var(--ink)}
+.side-foot{margin-top:auto;font-size:12px;color:var(--ink-faint);display:grid;gap:6px}
+.main{padding:44px 56px;display:grid;gap:28px;align-content:start;max-width:820px}
+.date{font:400 italic 17px var(--serif);color:var(--ink-soft)}
+.main h2{font-size:40px;font-weight:400;line-height:1.1}
+.session{background:var(--forest);color:#F3ECE2;border-radius:22px;padding:30px 32px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;position:relative;overflow:hidden}
+:root[data-theme="dark"] .session{background:#1B3A2F}
+.session h3{font-size:28px;font-weight:400}
+.session .meta{display:flex;gap:22px;margin-top:14px;font-size:14px;opacity:.85}
+.session .meta b{font:500 22px var(--serif);display:block;opacity:1}
+.session .btn{background:#E6D5C3;color:#173A2D}
+.session .btn kbd{background:none;color:inherit;border-color:currentColor;opacity:.6}
+.session .ghost-mark{position:absolute;right:-30px;top:-40px;width:220px;height:220px;opacity:.08;--mark:#E6D5C3;--ground:#22513F}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:grid;gap:8px}
+.stat .n{font:400 34px/1 var(--serif)}
+.stat .l{font-size:13px;color:var(--ink-soft)}
+.wotd{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:18px 20px;border:1px dashed var(--line-strong);border-radius:16px}
+.wotd .w{font:400 italic 26px var(--serif)}
+
+footer{padding:48px 0 64px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-faint);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+
+/* ───────────── Téléphones ───────────── */
+.phones{display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+.phone-fig{margin:0;display:grid;gap:14px;justify-items:center}
+.phone-fig figcaption{font:400 italic 15px var(--serif);color:var(--ink-soft)}
+.phone{width:330px;height:714px;max-width:100%;border-radius:50px;padding:10px;background:#0A120F;box-shadow:0 30px 60px -30px rgba(10,18,15,.55),inset 0 0 0 1.5px #2A3530}
+.phone-screen{height:100%;border-radius:40px;background:var(--paper);overflow:hidden;display:flex;flex-direction:column}
+.phone kbd{display:none}
+.ph-status{height:46px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:6px 28px 0;font:600 13px var(--sans);color:var(--ink)}
+.ph-status span:last-child{font-size:8px;letter-spacing:1px}
+.island{width:96px;height:28px;border-radius:20px;background:#0A120F}
+.ph-body{flex:1;min-height:0;padding:10px 20px 22px;display:flex;flex-direction:column;gap:16px}
+.ph-top{display:flex;align-items:center;justify-content:space-between}
+.ph-top .date{font-size:15px}
+.ph-title{font:400 29px/1.12 var(--serif)}
+.ph-session{grid-template-columns:1fr;padding:22px;border-radius:20px;gap:18px}
+.ph-session h3{font-size:23px}
+.ph-session .meta{gap:18px;font-size:12.5px;margin-top:10px}
+.ph-session .meta b{font-size:20px}
+.ph-session .ghost-mark{width:170px;height:170px;right:-36px;top:-30px}
+.ph-cta{width:100%;justify-content:center;padding:15px;font-size:15.5px;border-radius:14px}
+.ph-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ph-stats .stat{padding:14px;gap:8px;border-radius:14px}
+.ph-stats .n{font-size:26px}
+.ph-stats .n small{font-size:14px;color:var(--ink-faint)}
+.ph-stats .l{font-size:12px}
+.ph-stats .streak span{width:10px;height:15px}
+.ph-wotd{padding:12px 14px;gap:10px;border-radius:14px}
+.ph-wotd .w{font-size:20px}
+.ph-wotd .muted{font-size:12.5px}
+.tabbar{flex:none;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);background:var(--surface);padding:10px 0 24px}
+.tabbar a{display:grid;justify-items:center;gap:4px;font:500 11px var(--sans);color:var(--ink-faint)}
+.tabbar a.on{color:var(--forest)}
+:root[data-theme="dark"] .tabbar a.on{color:var(--ink)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tabbar a.on{color:var(--ink)}}
+.ph-bar{display:flex;align-items:center;gap:14px;color:var(--ink-soft)}
+.ph-count{font-size:12.5px;color:var(--ink-faint)}
+.ph-prompt{font:400 22px/1.4 var(--serif)}
+.ph-spacer{flex:1}
+.ph-hint{font-size:13px;color:var(--ink-faint);text-align:center;margin-bottom:-6px}
+.ph-ratings{grid-template-columns:1fr 1fr;margin:0}
+.ph-ratings .rate{padding:13px 6px;font-size:15px;border-radius:14px}
+.phone .choice{padding:16px 18px;font-size:21px;justify-content:center}
+.phone .answer input{font-size:21px}
+.phone .feedback{font-size:13.5px}
+
+@media (max-width:900px){
+  .comp-grid>*,.comp-grid>div>*,.type-grid>*,.logo-grid>*{min-width:0}
+  .ex-type{flex-wrap:wrap;gap:10px}
+  .wc-head,.wc-body{padding-left:20px;padding-right:20px}
+  .wc-head::after{left:20px;right:20px}
+  .ex-card{padding:22px 20px}
+  .wc-nuance div{grid-template-columns:1fr;gap:0}
+  .wc-word{font-size:44px}
+  .choice{flex-wrap:wrap}.choice .why{margin-left:0;max-width:none;text-align:left;flex-basis:100%}
+  .ratings{grid-template-columns:1fr 1fr}
+  .scales{gap:18px}
+  .wrap{padding:0 16px}
+  .hero,.logo-grid,.type-grid,.comp-grid,.motion-grid,.sec-head{grid-template-columns:1fr}
+  .sec-head{gap:6px}
+  .palette{grid-template-columns:repeat(2,1fr)}
+  .semantic,.lockups{grid-template-columns:1fr}
+  .icons{grid-template-columns:repeat(4,1fr)}
+  .screen{grid-template-columns:1fr}.side{display:none}
+  .main{padding:24px}
+  .stats{grid-template-columns:1fr}
+  .session{grid-template-columns:1fr}
+  .contrast-table{display:block;overflow-x:auto}
+}
+@media (pointer:coarse){kbd{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal-word,.reveal-def{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- ───── Symboles SVG du logo ───── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- Logo original, retracé en vecteur (repère 800 × 800) -->
+  <symbol id="mark" viewBox="119 122 560 560"><g fill="var(--mark)"><path d="M160 548 L215 520 L400 615 L600 515 L600 325 L640 348 L640 548 L400 672 Z"/><path d="M158 245 L196 265 L196 445 L400 545 L578 455 L578 500 L400 588 L158 465 Z"/><path d="M220 200 L262 220 L262 412 C305 405.5 370.5 467.5 395 515 L220 430 Z"/><path d="M283 158 C337.5 180.5 389 215.5 418 268 L418 505 L413 508 C393 453 337.5 407 283 390 Z"/><path d="M435 500 C423.5 408.5 515 378.5 578 343 L578 432 Z"/><path d="M443 378 C435.5 259.5 524.5 153.5 640 133 C644 166 637 201.5 628 232 L568 262 L615 258 C594 322.5 524.5 346.5 470 375 Z"/></g><path fill="var(--ground)" d="M448 374 C476 320 545 224 585 197 C571 226 511 316 473 372 Z"/></symbol>
+  <symbol id="app-icon" viewBox="0 0 800 800"><rect width="800" height="800" rx="176" fill="#22513F"/><g fill="#E6D5C3"><path d="M160 548 L215 520 L400 615 L600 515 L600 325 L640 348 L640 548 L400 672 Z"/><path d="M158 245 L196 265 L196 445 L400 545 L578 455 L578 500 L400 588 L158 465 Z"/><path d="M220 200 L262 220 L262 412 C305 405.5 370.5 467.5 395 515 L220 430 Z"/><path d="M283 158 C337.5 180.5 389 215.5 418 268 L418 505 L413 508 C393 453 337.5 407 283 390 Z"/><path d="M435 500 C423.5 408.5 515 378.5 578 343 L578 432 Z"/><path d="M443 378 C435.5 259.5 524.5 153.5 640 133 C644 166 637 201.5 628 232 L568 262 L615 258 C594 322.5 524.5 346.5 470 375 Z"/></g><path fill="#22513F" d="M448 374 C476 320 545 224 585 197 C571 226 511 316 473 372 Z"/></symbol>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <svg width="34" height="34"><use href="#app-icon"/></svg>
+      <span class="wordmark">Lexis</span>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button">
+      <svg class="i" viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2"/></svg>
+      <span>Mode sombre</span>
+    </button>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Trouver le mot juste, au moment où on en a besoin.</h1>
+    </div>
+    <p>Lexis emprunte au dictionnaire et à la copie corrigée : du papier, de l'encre, une seule couleur de marque. Le mot est le héros de chaque écran ; l'interface s'efface autour de lui. Cette planche fixe les règles avant de construire les écrans.</p>
+  </div>
+
+  <!-- 01 LOGO -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">Logo</span>
+      <div>
+        <h2>Ton logo original, en vecteur</h2>
+        <p class="note">Ton logo tel quel, retracé à l'identique à partir de ton image pour être net à toutes les tailles : icône Android, favicon, application.</p>
+      </div>
+    </div>
+
+    <div class="logo-grid">
+      <div class="panel">
+        <div class="panel-label">Original (image fournie)</div>
+        <div class="orig-crop"><img src="assets/logo-original.jpg" alt="Logo original de Lexis"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Version vectorielle</div>
+        <svg class="new-icon" width="220" height="220" role="img" aria-label="Logo Lexis"><use href="#app-icon"/></svg>
+      </div>
+    </div>
+
+
+    <div class="panel" style="margin-top:24px">
+      <div class="panel-label">Test de réduction</div>
+      <div class="scales">
+        <div class="scale"><svg width="128" height="128"><use href="#app-icon"/></svg>128 px</div>
+        <div class="scale"><svg width="64" height="64"><use href="#app-icon"/></svg>64 px</div>
+        <div class="scale"><svg width="48" height="48"><use href="#app-icon"/></svg>48 px</div>
+        <div class="scale"><svg width="32" height="32"><use href="#app-icon"/></svg>32 px</div>
+        <div class="scale"><svg width="24" height="24"><use href="#app-icon"/></svg>24 px</div>
+        <div class="scale"><svg width="16" height="16"><use href="#app-icon"/></svg>16 px</div>
+      </div>
+    </div>
+
+    <div class="lockups">
+      <div class="lockup l-paper"><svg width="44" height="44"><use href="#mark"/></svg><span class="wordmark">Lexis</span></div>
+      <div class="lockup l-forest"><svg width="44" height="44"><use href="#mark"/></svg><span class="wordmark">Lexis</span></div>
+      <div class="lockup l-night"><svg width="44" height="44"><use href="#mark"/></svg><span class="wordmark">Lexis</span></div>
+    </div>
+  </section>
+
+  <!-- 02 COULEURS -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">Couleurs</span>
+      <div>
+        <h2>Papier, encre, cuivre</h2>
+        <p class="note">Les deux couleurs de ton logo deviennent la base de l'interface : la crème donne le papier, le vert l'encre et les actions principales. J'ajoute un accent cuivre, tiré des lignes de construction de ta planche, et deux couleurs de retour qui ne sont pas vertes, puisque le vert est déjà la couleur de la marque.</p>
+      </div>
+    </div>
+    <div class="palette">
+      <div class="sw big"><div class="sw-chip" style="background:#22513F;color:#E6D5C3">Forêt</div><div class="sw-meta"><b>Vert forêt</b><code>#22513F</code><span class="muted">Marque, actions principales, encre forte</span></div></div>
+      <div class="sw big"><div class="sw-chip" style="background:#E6D5C3;color:#22513F">Ivoire</div><div class="sw-meta"><b>Blanc ivoire</b><code>#E6D5C3</code><span class="muted">Marque, symbole, texte en mode sombre</span></div></div>
+      <div class="sw"><div class="sw-chip" style="background:#F3ECE2;color:#1C2B25">Papier</div><div class="sw-meta"><b>Papier</b><code>#F3ECE2</code><span class="muted">Fond, mode clair</span></div></div>
+      <div class="sw"><div class="sw-chip" style="background:#1C2B25;color:#F3ECE2">Encre</div><div class="sw-meta"><b>Encre</b><code>#1C2B25</code><span class="muted">Texte principal</span></div></div>
+      <div class="sw"><div class="sw-chip" style="background:#0F201A;color:#E6D5C3">Reliure</div><div class="sw-meta"><b>Reliure</b><code>#0F201A</code><span class="muted">Fond, mode sombre</span></div></div>
+      <div class="sw"><div class="sw-chip" style="background:#92522A;color:#FBF7F1">Cuivre</div><div class="sw-meta"><b>Cuivre</b><code>#92522A</code><span class="muted">Accent, rubriques, série</span></div></div>
+    </div>
+
+    <div class="semantic">
+      <div class="sem"><span class="kicker" style="color:var(--gold)">Réussite</span><h3>Or bruni</h3><p class="note">Pour « juste », un or plutôt qu'un vert, sinon une bonne réponse se confondrait avec un bouton.</p><code class="src">#7E5E12 sur fond #F1E4C0</code></div>
+      <div class="sem"><span class="kicker" style="color:var(--clay)">Erreur</span><h3>Encre de correction</h3><p class="note">Le rouge du correcteur, tiré vers le bordeaux pour rester chaleureux. On corrige la copie, on ne sanctionne pas.</p><code class="src">#9B2C3B sur fond #F4DADC</code></div>
+      <div class="sem"><span class="kicker">Contraste</span><h3>Vérifié automatiquement</h3><p class="note">Les ratios ci-dessous sont calculés en direct pour le thème affiché (clair ou sombre). Cible : 4,5:1 minimum pour le texte (WCAG AA).</p></div>
+    </div>
+
+    <table class="contrast-table" id="contrast">
+      <thead><tr><th>Paire</th><th>Usage</th><th>Ratio</th><th>AA texte</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- 03 TYPO -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">Typographie</span>
+      <div>
+        <h2>Une serif pour les mots, une sans-serif pour l'interface</h2>
+        <p class="note"><b>Newsreader</b>, une serif éditoriale conçue pour la lecture à l'écran, porte tout ce qui touche à la langue : mots, définitions, exemples. <b>Instrument Sans</b> porte l'interface (boutons, libellés, chiffres) et ne concurrence jamais le mot. Les deux polices sont gratuites (Google Fonts, licence OFL).</p>
+      </div>
+    </div>
+    <div class="type-grid">
+      <div class="panel">
+        <div class="panel-label">Newsreader, pour la langue</div>
+        <div class="specimen-word">Sagace</div>
+        <p class="specimen-italic">« D'un regard sagace, elle démêla en quelques secondes ce que trois réunions n'avaient pas éclairci. »</p>
+        <div style="margin-top:22px;display:flex;gap:28px;flex-wrap:wrap;font-family:var(--serif);font-size:20px">
+          <span>Aa Éé Œœ Çç « »</span><span style="font-style:italic">perspicacité</span><span style="font-weight:600">nuance</span>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Échelle typographique</div>
+        <div class="scale-row"><span>Mot, 50 px</span><b style="font:400 40px/1 var(--serif)">Perspicace</b></div>
+        <div class="scale-row"><span>Titre, 34 px</span><b style="font:400 28px/1.1 var(--serif)">Session du jour</b></div>
+        <div class="scale-row"><span>Définition, 21 px</span><span style="font:400 19px var(--serif);color:var(--ink);letter-spacing:0">Qui perçoit ce qui échappe aux autres.</span></div>
+        <div class="scale-row"><span>Interface, 15 px</span><span style="font-size:15px;color:var(--ink);letter-spacing:0">12 révisions et 4 nouveaux mots</span></div>
+        <div class="scale-row"><span>Rubrique, 16 px</span><span class="kicker">Nuances</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 COMPOSANTS -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">Composants</span>
+      <div>
+        <h2>Fiche, exercices, boutons</h2>
+        <p class="note">Tout est pensé pour le <b>tactile</b> : zones de touche d'au moins 48 px, boutons larges, réponses tapées sans correction automatique. Les raccourcis clavier (<kbd>⏎</kbd>, <kbd>1</kbd>–<kbd>4</kbd>) n'apparaissent que si tu ouvres Lexis sur un ordinateur. Le contenu de la fiche ci-dessous est un exemple : les vraies fiches seront construites à partir du Wiktionnaire.</p>
+      </div>
+    </div>
+
+    <div class="btn-row" style="margin-bottom:32px">
+      <button class="btn btn-primary" type="button">Commencer la session <kbd>⏎</kbd></button>
+      <button class="btn btn-secondary" type="button">Voir la fiche</button>
+      <button class="btn btn-ghost" type="button">Passer</button>
+    </div>
+
+    <div class="comp-grid">
+      <!-- Fiche de mot -->
+      <article class="word-card">
+        <div class="wc-head">
+          <div class="wc-word">perspicace</div>
+          <div class="wc-phon">[pɛʁ.spi.kas]</div>
+          <p class="wc-gram">adjectif, <span class="sc">soutenu</span>. Du latin <i>perspicax</i>, « qui voit à travers ».</p>
+        </div>
+        <div class="wc-body">
+          <div>
+            <div class="wc-label">Définition</div>
+            <p class="wc-def">Qui perçoit avec finesse ce qui n'est pas visible au premier abord.</p>
+            <p class="wc-explain" style="margin-top:8px">Se dit de quelqu'un qui comprend vite les intentions cachées, les enjeux d'une situation, ce que les autres ne remarquent pas.</p>
+          </div>
+          <p class="wc-example">« Une remarque <mark>perspicace</mark> : elle avait compris avant tout le monde que le projet cachait un désaccord entre les associés. »</p>
+          <div>
+            <div class="wc-label">Ne pas confondre</div>
+            <div class="wc-nuance">
+              <div><b class="self">perspicace</b><span>voit ce qui est <i>caché</i> dans le présent</span></div>
+              <div><b>clairvoyant</b><span>voit juste sur ce qui <i>va se passer</i></span></div>
+              <div><b>sagace</b><span>démêle avec <i>finesse de jugement</i> (plus littéraire)</span></div>
+              <div><b>intelligent</b><span>terme général, sans cette idée de pénétration</span></div>
+            </div>
+          </div>
+          <div class="wc-cols">
+            <div><div class="wc-label">Synonymes</div>pénétrant, sagace, fin</div>
+            <div><div class="wc-label">Contraires</div>obtus, borné, naïf</div>
+          </div>
+          <div class="wc-warn">
+            <svg class="i" viewBox="0 0 24 24" width="20" height="20"><path d="M12 3 22 20H2Z"/><path d="M12 10v4M12 16.5v1"/></svg>
+            <span>Se dit d'une personne, d'un regard ou d'un jugement, pas d'un objet. On ne dit pas « un outil perspicace ».</span>
+          </div>
+          <p class="src">Exemple de rendu. Contenu final adapté du Wiktionnaire (CC BY-SA).</p>
+        </div>
+      </article>
+
+      <div style="display:grid;gap:24px">
+        <!-- Exercice : situation → mot -->
+        <div class="ex-card">
+          <div class="ex-type"><span class="kicker">Trouve le mot juste</span><span class="progress" style="width:140px"><span class="bar"><i></i></span>7/12</span></div>
+          <p class="ex-prompt">Dès 2019, il avait annoncé que le marché s'effondrerait. Personne ne l'écoutait. Il s'est montré <span class="blank"></span>.</p>
+          <div class="answer"><input value="clairvoyant" aria-label="Ta réponse"><button class="btn btn-primary" type="button" style="padding:10px 14px">Valider <kbd>⏎</kbd></button></div>
+          <div class="feedback good">
+            <svg class="i" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6"/></svg>
+            <div><b>Juste.</b>Il s'agit de prévoir l'avenir : <i>clairvoyant</i> convient mieux que <i>perspicace</i>, qui porte sur ce qui est caché dans le présent.</div>
+          </div>
+          <div class="ratings" aria-label="Évaluer la difficulté">
+            <button class="rate again" type="button">Oublié<small>10 min</small></button>
+            <button class="rate" type="button">Difficile<small>2 jours</small></button>
+            <button class="rate" type="button">Bien<small>5 jours</small></button>
+            <button class="rate" type="button">Facile<small>12 jours</small></button>
+          </div>
+        </div>
+
+        <!-- Exercice : discrimination -->
+        <div class="ex-card">
+          <div class="ex-type"><span class="kicker">Quel mot convient le mieux ?</span><div class="streak" title="Série : 6 jours"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="today"></span><span></span></div></div>
+          <p class="ex-prompt" style="font-size:20px">À un simple échange de regards, elle a compris que son collègue mentait. Elle est…</p>
+          <div class="choices">
+            <button class="choice right" type="button"><kbd>1</kbd>perspicace<span class="why">Elle perçoit ce qui est dissimulé.</span></button>
+            <button class="choice dim" type="button"><kbd>2</kbd>clairvoyante<span class="why">Porte sur l'avenir.</span></button>
+            <button class="choice dim" type="button"><kbd>3</kbd>sagace<span class="why">Possible, mais plus littéraire et plus « raisonné ».</span></button>
+          </div>
+        </div>
+
+        <div class="feedback bad" style="margin:0">
+          <svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          <div><b>Pas tout à fait.</b>« Obtus » est un contraire. On cherchait <i>sagace</i>. Le mot reviendra plus tôt dans tes révisions.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 ICONES -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">Icônes</span>
+      <div>
+        <h2>Un trait fin, des angles nets</h2>
+        <p class="note">Les icônes reprennent les angles vifs des chevrons du logo : trait de 1,75 px, angles non arrondis, formes simples. Pour la série de jours, j'évite la flamme habituelle (elle rappellerait l'effet « feu » que tu as corrigé dans le logo) et j'utilise un <b>marque-page</b> : un jour réussi est une page marquée.</p>
+      </div>
+    </div>
+    <div class="icons">
+      <div class="icon-cell"><svg class="i" viewBox="0 0 24 24"><path d="M12 6.5C9.5 4.5 6 4.5 3 5.5V19c3-1 6.5-1 9 1 2.5-2 6-2 9-1V5.5c-3-1-6.5-1-9 1ZM12 6.5V20"/></svg>Aujourd'hui</div>
+      <div class="icon-cell"><svg class="i" viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5Z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>Lexique</div>
+      <div class="icon-cell"><svg class="i" viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M5 16l5-5 4 3 6-7"/></svg>Progrès</div>
+      <div class="icon-cell"><svg class="i" viewBox="0 0 24 24"><path d="M7 3h10v18l-5-4-5 4Z"/></svg>Série</div>
+      <div class="icon-cell"><svg class="i" viewBox="0 0 24 24"><path d="M20 3C12 5 7 11 6 19"/><path d="M20 3c0 8-5 12-11 12"/><path d="M4 21l2-2"/></svg>Écrire</div>
+      <div class="icon-cell"><svg class="i" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>Chercher</div>
+      <div class="icon-cell"><svg class="i" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg>Rappel</div>
+      <div class="icon-cell"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><path d="M14 4v6M8 14v6"/></svg>Réglages</div>
+    </div>
+  </section>
+
+  <!-- 06 MOUVEMENT -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">Mouvement</span>
+      <div>
+        <h2>Peu d'animations, toujours utiles</h2>
+        <p class="note">Les animations durent entre 150 et 550 ms. Elles servent à guider l'attention ou à marquer une réussite, jamais à décorer. Elles sont désactivées si ton système demande de réduire les animations. Pas de confettis.</p>
+      </div>
+    </div>
+    <div class="motion-grid">
+      <div class="motion" id="m1">
+        <h3>Révélation</h3>
+        <div class="stage" style="align-content:center;gap:8px"><div class="reveal-word">sagace</div><div class="reveal-def">qui démêle avec finesse de jugement</div></div>
+        <p class="note">La réponse monte doucement, le mot d'abord, puis sa définition.</p>
+        <button class="btn btn-secondary" data-play="m1" type="button">Rejouer</button>
+      </div>
+      <div class="motion" id="m2">
+        <h3>Trait d'or</h3>
+        <div class="stage"><span class="ink-word">clairvoyant</span></div>
+        <p class="note">Une bonne réponse est soulignée d'un trait, comme au crayon dans un livre.</p>
+        <button class="btn btn-secondary" data-play="m2" type="button">Rejouer</button>
+      </div>
+      <div class="motion" id="m3">
+        <h3>Page suivante</h3>
+        <div class="stage"><div class="page-stack"><div class="p1"></div><div class="p2">obtus</div><div class="p3">sagace</div></div></div>
+        <p class="note">Le passage d'un exercice au suivant évoque une page qu'on tourne.</p>
+        <button class="btn btn-secondary" data-play="m3" type="button">Rejouer</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 ÉCRANS MOBILES -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">Mise en page</span>
+      <div>
+        <h2>Pensé pour le téléphone, et pour le pouce</h2>
+        <p class="note">Lexis s'installe sur l'écran d'accueil comme une vraie application. Les actions sont <b>en bas de l'écran</b>, là où le pouce arrive sans effort, et la navigation tient en trois onglets. Les champs de réponse <b>désactivent la correction automatique</b> : sans ça, le clavier du téléphone « corrigerait » tes réponses à ta place. L'accueil n'a qu'une action principale, lancer la session.</p>
+      </div>
+    </div>
+    <div class="phones">
+      <!-- Accueil -->
+      <figure class="phone-fig">
+        <div class="phone"><div class="phone-screen">
+          <div class="ph-status"><span>9:41</span><span class="island"></span><span>●●●</span></div>
+          <div class="ph-body">
+            <div class="ph-top"><svg width="28" height="28"><use href="#app-icon"/></svg><span class="date">jeudi 5 novembre</span></div>
+            <h3 class="ph-title">Bonsoir.<br>Quatre mots t'attendent.</h3>
+            <div class="session ph-session">
+              <svg class="ghost-mark"><use href="#mark"/></svg>
+              <div>
+                <h3>Session du jour</h3>
+                <div class="meta"><span><b>12</b>révisions</span><span><b>4</b>nouveaux</span><span><b>≈ 12</b>min</span></div>
+              </div>
+              <button class="btn ph-cta" type="button">Commencer la session</button>
+            </div>
+            <div class="ph-stats">
+              <div class="stat"><span class="n">6 <small>jours</small></span><div class="streak"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="today"></span><span></span></div></div>
+              <div class="stat"><span class="n">17<small>/48</small></span><span class="l">mots retrouvés seul</span></div>
+            </div>
+            <div class="wotd ph-wotd"><span class="kicker">À revoir</span><span><span class="w">sagace</span> <span class="muted">oublié 2 fois</span></span></div>
+          </div>
+          <nav class="tabbar">
+            <a class="on"><svg class="i" viewBox="0 0 24 24"><path d="M12 6.5C9.5 4.5 6 4.5 3 5.5V19c3-1 6.5-1 9 1 2.5-2 6-2 9-1V5.5c-3-1-6.5-1-9 1ZM12 6.5V20"/></svg>Aujourd'hui</a>
+            <a><svg class="i" viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5Z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>Lexique</a>
+            <a><svg class="i" viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M5 16l5-5 4 3 6-7"/></svg>Progrès</a>
+          </nav>
+        </div></div>
+        <figcaption>Accueil</figcaption>
+      </figure>
+
+      <!-- Exercice -->
+      <figure class="phone-fig">
+        <div class="phone"><div class="phone-screen">
+          <div class="ph-status"><span>9:43</span><span class="island"></span><span>●●●</span></div>
+          <div class="ph-body">
+            <div class="ph-bar"><svg class="i" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6 6 18"/></svg><span class="bar"><i></i></span><span class="ph-count">7/12</span></div>
+            <span class="kicker">Trouve le mot juste</span>
+            <p class="ph-prompt">Dès 2019, il avait annoncé que le marché s'effondrerait. Personne ne l'écoutait. Il s'est montré…</p>
+            <div class="answer"><input value="clairvoyant" aria-label="Ta réponse" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false"></div>
+            <div class="feedback good" style="margin:0">
+              <svg class="i" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6"/></svg>
+              <div><b>Juste.</b>Il s'agit de prévoir l'avenir : <i>clairvoyant</i>, pas <i>perspicace</i>.</div>
+            </div>
+            <div class="ph-spacer"></div>
+            <p class="ph-hint">C'était facile ?</p>
+            <div class="ratings ph-ratings">
+              <button class="rate again" type="button">Oublié<small>10 min</small></button>
+              <button class="rate" type="button">Difficile<small>2 jours</small></button>
+              <button class="rate" type="button">Bien<small>5 jours</small></button>
+              <button class="rate" type="button">Facile<small>12 jours</small></button>
+            </div>
+          </div>
+        </div></div>
+        <figcaption>Exercice, après validation</figcaption>
+      </figure>
+
+      <!-- Discrimination -->
+      <figure class="phone-fig">
+        <div class="phone"><div class="phone-screen">
+          <div class="ph-status"><span>9:45</span><span class="island"></span><span>●●●</span></div>
+          <div class="ph-body">
+            <div class="ph-bar"><svg class="i" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6 6 18"/></svg><span class="bar"><i style="width:75%"></i></span><span class="ph-count">9/12</span></div>
+            <span class="kicker">Quel mot convient le mieux ?</span>
+            <p class="ph-prompt">À un simple échange de regards, elle a compris que son collègue mentait. Elle est…</p>
+            <div class="ph-spacer"></div>
+            <div class="choices">
+              <button class="choice" type="button">perspicace</button>
+              <button class="choice" type="button">clairvoyante</button>
+              <button class="choice" type="button">sagace</button>
+            </div>
+            <button class="btn btn-ghost" type="button" style="justify-self:center;align-self:center">Je ne sais pas</button>
+          </div>
+        </div></div>
+        <figcaption>Choisir entre mots proches</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <footer>
+    <span>Lexis, direction artistique, version 2 du 5 novembre 2026</span>
+    <span>Newsreader et Instrument Sans, sous licence SIL Open Font</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+  function label(){btn.querySelector('span').textContent=isDark()?'Mode clair':'Mode sombre'}
+  try{var s=localStorage.getItem('lexis-theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
+  btn.addEventListener('click',function(){var n=isDark()?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('lexis-theme',n)}catch(e){}label();contrast()});
+  label();
+
+  // Contraste WCAG calculé en direct
+  function hex(v){v=v.trim().replace('#','');return [0,2,4].map(function(i){return parseInt(v.substr(i,2),16)/255})}
+  function lum(c){c=c.map(function(x){return x<=.03928?x/12.92:Math.pow((x+.055)/1.055,2.4)});return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+  function ratio(a,b){var A=lum(hex(a)),B=lum(hex(b));return (Math.max(A,B)+.05)/(Math.min(A,B)+.05)}
+  var pairs=[['--ink','--paper','Texte principal sur fond'],['--ink-soft','--paper','Texte secondaire'],['--ink-soft','--surface','Texte secondaire sur carte'],['--primary-fg','--primary-bg','Bouton principal'],['--copper','--paper','Rubriques (cuivre)'],['--gold','--gold-tint','Message de réussite'],['--clay','--clay-tint','Message d’erreur'],['--ink','--gold-tint','Texte dans un retour positif']];
+  function contrast(){
+    var cs=getComputedStyle(root),tb=document.querySelector('#contrast tbody');tb.innerHTML='';
+    pairs.forEach(function(p){
+      var fg=cs.getPropertyValue(p[0]),bg=cs.getPropertyValue(p[1]),r=ratio(fg,bg);
+      var tr=document.createElement('tr');
+      tr.innerHTML='<td><span class="pair" style="color:'+fg+';background:'+bg+'">Aa</span></td><td>'+p[2]+'</td><td>'+r.toFixed(1).replace('.',',')+':1</td><td>'+(r>=4.5?'<span class="ok">Oui</span>':'<span style="color:var(--clay)">Non</span>')+'</td>';
+      tb.appendChild(tr);
+    });
+  }
+  contrast();
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){label();contrast()});
+
+  // Démos de mouvement
+  function play(id){var el=document.getElementById(id);el.classList.remove('play');void el.offsetWidth;el.classList.add('play')}
+  document.querySelectorAll('[data-play]').forEach(function(b){b.addEventListener('click',function(){play(b.dataset.play)})});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){play(e.target.id);io.unobserve(e.target)}})},{threshold:.6});
+  ['m1','m2','m3'].forEach(function(id){io.observe(document.getElementById(id))});
+})();
+</script>
+</body>
+</html>

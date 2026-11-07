@@ -1,0 +1,1540 @@
+{
+  "families": [
+    {
+      "id": "calme",
+      "name": "Garder son calme, ne plus s'émouvoir",
+      "words": [
+        "placide",
+        "nonchalant",
+        "blase",
+        "impassible"
+      ],
+      "discriminations": [
+        {
+          "prompt": "Sous les insultes de la foule, le garde ne cille pas : son visage ne trahit rien.",
+          "answer": "impassible",
+          "why": {
+            "impassible": "Il maîtrise ses émotions : rien ne paraît.",
+            "placide": "Placide décrit un tempérament paisible, pas une maîtrise sous la pression.",
+            "nonchalant": "Il n'est pas question d'une allure lente ou détachée.",
+            "blase": "Il ne s'agit pas de lassitude due à l'habitude."
+          }
+        },
+        {
+          "prompt": "Elle a tant fréquenté les grands restaurants qu'un plat exceptionnel ne lui arrache plus un sourire.",
+          "answer": "blase",
+          "why": {
+            "blase": "L'habitude a usé sa capacité à s'émerveiller.",
+            "impassible": "Elle ne retient pas une émotion : elle n'en ressent plus.",
+            "placide": "Ce n'est pas une question de tempérament calme.",
+            "nonchalant": "Rien ne dit qu'elle agit sans ardeur."
+          }
+        },
+        {
+          "prompt": "Le chat dort au soleil, indifférent au chien qui aboie à deux mètres.",
+          "answer": "placide",
+          "why": {
+            "placide": "Un calme paisible que rien ne vient troubler.",
+            "impassible": "Impassible suppose une maîtrise volontaire face à une épreuve.",
+            "nonchalant": "Nonchalant décrit une manière d'agir sans ardeur, pas un repos tranquille.",
+            "blase": "Le chat n'est pas lassé par l'habitude."
+          }
+        },
+        {
+          "prompt": "Il range ses affaires sans se presser, l'air ailleurs, alors que son train part dans cinq minutes.",
+          "answer": "nonchalant",
+          "why": {
+            "nonchalant": "Il agit sans ardeur ni hâte, avec un détachement un peu mou.",
+            "placide": "Possible, mais placide dit le calme intérieur, pas la lenteur de l'action.",
+            "impassible": "Il ne s'agit pas de cacher une émotion.",
+            "blase": "Rien ne dit qu'il est lassé de tout."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pousser",
+      "name": "Pousser quelqu'un à agir",
+      "words": [
+        "enjoindre",
+        "intimer",
+        "adjurer",
+        "exhorter"
+      ],
+      "discriminations": [
+        {
+          "prompt": "Le juge ordonne officiellement au locataire de quitter le logement sous un mois.",
+          "answer": "enjoindre",
+          "why": {
+            "enjoindre": "Un ordre formel, donné par une autorité.",
+            "intimer": "Proche, mais intimer insiste sur le ton sec ; ici, c'est le caractère officiel.",
+            "exhorter": "Exhorter, c'est encourager, pas ordonner.",
+            "adjurer": "Adjurer, c'est supplier : l'inverse d'un ordre."
+          }
+        },
+        {
+          "prompt": "« Allez, encore un effort, la victoire est à portée de main ! », crie le capitaine.",
+          "answer": "exhorter",
+          "why": {
+            "exhorter": "Il encourage vivement pour motiver.",
+            "enjoindre": "Il n'ordonne rien officiellement.",
+            "intimer": "Ce n'est pas un ordre sec.",
+            "adjurer": "Il ne supplie pas : il galvanise."
+          }
+        },
+        {
+          "prompt": "« Silence ! », lance sèchement le surveillant à la salle d'examen.",
+          "answer": "intimer",
+          "why": {
+            "intimer": "Un ordre signifié sèchement, sans discussion : il intime le silence.",
+            "enjoindre": "Possible, mais enjoindre évoque plutôt un ordre formel, souvent écrit.",
+            "exhorter": "Il n'encourage personne.",
+            "adjurer": "C'est l'inverse d'une supplication."
+          }
+        },
+        {
+          "prompt": "À genoux, il supplie le roi d'épargner son fils.",
+          "answer": "adjurer",
+          "why": {
+            "adjurer": "Une supplication pressante, grave.",
+            "exhorter": "Exhorter, c'est encourager quelqu'un, pas l'implorer.",
+            "enjoindre": "Il n'a aucune autorité pour ordonner.",
+            "intimer": "Il ne donne aucun ordre."
+          }
+        }
+      ]
+    },
+    {
+      "id": "moquerie",
+      "name": "Se moquer",
+      "words": [
+        "goguenard",
+        "railleur",
+        "sardonique",
+        "narquois",
+        "sarcastique"
+      ],
+      "discriminations": [
+        {
+          "prompt": "Il ne dit rien, mais son petit sourire en coin montre qu'il savait que tu échouerais.",
+          "answer": "narquois",
+          "why": {
+            "narquois": "Une moquerie malicieuse, silencieuse, un peu supérieure.",
+            "goguenard": "Goguenard suppose un amusement plus franc, plus visible.",
+            "railleur": "Le railleur se moque en paroles.",
+            "sardonique": "Trop fort : rien de cruel ici.",
+            "sarcastique": "Le sarcasme passe par des paroles mordantes."
+          }
+        },
+        {
+          "prompt": "Le tyran éclate d'un rire cruel en voyant ses ennemis ruinés.",
+          "answer": "sardonique",
+          "why": {
+            "sardonique": "Un rire méchant qui se réjouit du malheur d'autrui.",
+            "narquois": "Trop léger : la malice n'est pas la cruauté.",
+            "goguenard": "Goguenard est amusé, pas cruel.",
+            "railleur": "Le railleur se moque, il ne savoure pas un malheur.",
+            "sarcastique": "Le sarcasme est verbal ; ici, c'est un rire."
+          }
+        },
+        {
+          "prompt": "Accoudés au comptoir, les habitués commentent en rigolant les maladresses du nouveau serveur.",
+          "answer": "goguenard",
+          "why": {
+            "goguenard": "Des spectateurs qui s'amusent franchement de la situation.",
+            "narquois": "Leur moquerie n'est ni discrète ni silencieuse.",
+            "railleur": "Possible, mais goguenard dit mieux la posture du spectateur amusé.",
+            "sardonique": "Il n'y a pas de cruauté.",
+            "sarcastique": "Il n'y a pas d'ironie mordante adressée à quelqu'un."
+          }
+        },
+        {
+          "prompt": "« Quelle ponctualité remarquable ! », lui dit-on alors qu'il a une heure de retard.",
+          "answer": "sarcastique",
+          "why": {
+            "sarcastique": "Une ironie mordante : on dit le contraire pour blesser.",
+            "railleur": "Proche, mais sarcastique dit mieux l'ironie piquante.",
+            "narquois": "Narquois passe plutôt par un sourire que par une phrase.",
+            "goguenard": "Il ne s'agit pas d'un spectateur amusé.",
+            "sardonique": "Trop fort : ce n'est pas un rire cruel."
+          }
+        }
+      ]
+    },
+    {
+      "id": "contester",
+      "name": "Contester, se dérober",
+      "words": [
+        "recuser",
+        "desavouer",
+        "objecter",
+        "eluder",
+        "refuter"
+      ],
+      "discriminations": [
+        {
+          "prompt": "L'avocat refuse que ce juge, ami de la partie adverse, siège au procès.",
+          "answer": "recuser",
+          "why": {
+            "recuser": "Il refuse l'autorité d'un juge qu'il estime partial.",
+            "desavouer": "Il ne retire pas son soutien à quelqu'un de son camp.",
+            "objecter": "Il ne se contente pas d'opposer un argument.",
+            "eluder": "Il ne cherche pas à éviter une question.",
+            "refuter": "Il ne démontre pas qu'une affirmation est fausse."
+          }
+        },
+        {
+          "prompt": "Le gouvernement annonce publiquement qu'il ne soutient plus son porte-parole après ses déclarations.",
+          "answer": "desavouer",
+          "why": {
+            "desavouer": "Il retire publiquement son soutien à l'un des siens.",
+            "recuser": "Récuser vise surtout un juge, un témoin, un argument extérieur.",
+            "objecter": "Il ne s'agit pas d'opposer un argument.",
+            "eluder": "Il ne se dérobe pas : il prend position.",
+            "refuter": "Il ne démontre rien."
+          }
+        },
+        {
+          "prompt": "Interrogé sur l'affaire, le dirigeant parle longuement de la météo et de ses projets.",
+          "answer": "eluder",
+          "why": {
+            "eluder": "Il évite habilement la question gênante.",
+            "objecter": "Il n'oppose aucun argument.",
+            "recuser": "Il ne conteste pas la légitimité de la question.",
+            "desavouer": "Il ne renie personne.",
+            "refuter": "Il ne démontre rien."
+          }
+        },
+        {
+          "prompt": "« Mais tu oublies que la boutique est fermée le dimanche ! », répond-elle à ton projet.",
+          "answer": "objecter",
+          "why": {
+            "objecter": "Elle oppose une raison contraire à ton idée.",
+            "refuter": "Elle ne démontre pas que ton idée est fausse, elle soulève une difficulté.",
+            "recuser": "Elle ne conteste l'autorité de personne.",
+            "desavouer": "Elle ne renie rien.",
+            "eluder": "Elle ne se dérobe pas, elle répond."
+          }
+        },
+        {
+          "prompt": "Preuves à l'appui, il démontre que la thèse de son contradicteur est fausse.",
+          "answer": "refuter",
+          "why": {
+            "refuter": "Il prouve que l'affirmation est fausse.",
+            "objecter": "Objecter, c'est opposer un argument, pas démontrer la fausseté.",
+            "recuser": "Il ne rejette pas une autorité, il démontre.",
+            "desavouer": "Il ne renie rien.",
+            "eluder": "Il affronte la question au lieu de l'éviter."
+          }
+        }
+      ]
+    },
+    {
+      "id": "discours",
+      "name": "Trop parler, mal parler",
+      "words": [
+        "volubile",
+        "sentencieux",
+        "grandiloquent",
+        "emphatique"
+      ],
+      "discriminations": [
+        {
+          "prompt": "Elle raconte son voyage à toute vitesse, sans laisser personne placer un mot.",
+          "answer": "volubile",
+          "why": {
+            "volubile": "Un flot de paroles rapide et abondant.",
+            "sentencieux": "Elle ne fait pas la morale.",
+            "grandiloquent": "Rien ne dit qu'elle emploie de grands mots.",
+            "emphatique": "Ce n'est pas le ton exagéré qui frappe, c'est le débit."
+          }
+        },
+        {
+          "prompt": "« L'argent ne fait pas le bonheur », répète-t-il gravement, l'index levé.",
+          "answer": "sentencieux",
+          "why": {
+            "sentencieux": "Une maxime grave, énoncée comme une leçon.",
+            "grandiloquent": "La phrase est simple, pas pompeuse.",
+            "emphatique": "Possible pour le ton, mais sentencieux dit mieux la maxime moralisatrice.",
+            "volubile": "Il ne parle pas beaucoup ni vite."
+          }
+        },
+        {
+          "prompt": "Le slogan présente un nouveau shampooing comme « une révolution pour l'humanité ».",
+          "answer": "grandiloquent",
+          "why": {
+            "grandiloquent": "Des mots bien trop grands pour leur sujet.",
+            "emphatique": "Emphatique porte plutôt sur le ton ; ici, ce sont les mots.",
+            "sentencieux": "Ce n'est pas une leçon de morale.",
+            "volubile": "Il n'y a pas de flot de paroles."
+          }
+        },
+        {
+          "prompt": "L'acteur force sa voix et multiplie les grands gestes pour dire une réplique toute simple.",
+          "answer": "emphatique",
+          "why": {
+            "emphatique": "Il exagère le ton et les gestes pour faire de l'effet.",
+            "grandiloquent": "Les mots sont simples : c'est la manière qui est exagérée.",
+            "sentencieux": "Il ne fait pas la morale.",
+            "volubile": "Il ne parle pas plus que nécessaire."
+          }
+        }
+      ]
+    },
+    {
+      "id": "manieres",
+      "name": "Manières d'être avec les autres",
+      "words": [
+        "condescendance",
+        "connivence",
+        "bonhomie",
+        "deference"
+      ],
+      "discriminations": [
+        {
+          "prompt": "« Ne vous inquiétez pas, ma petite, je vais vous expliquer lentement », dit-il à une ingénieure chevronnée.",
+          "answer": "condescendance",
+          "why": {
+            "condescendance": "Une amabilité de façade qui laisse sentir sa supériorité.",
+            "bonhomie": "La bonhomie est simple et sincère, sans mépris.",
+            "connivence": "Il n'y a aucune complicité.",
+            "deference": "C'est l'inverse : la déférence est un respect plein d'égards."
+          }
+        },
+        {
+          "prompt": "Le gardien et le cambrioleur avaient convenu de laisser la porte de service ouverte.",
+          "answer": "connivence",
+          "why": {
+            "connivence": "Une entente secrète, ici coupable.",
+            "condescendance": "Il n'y a pas de supériorité affichée.",
+            "bonhomie": "Rien à voir avec des manières simples et chaleureuses.",
+            "deference": "Il n'y a pas de marque de respect."
+          }
+        },
+        {
+          "prompt": "Le vieux maire offre un café aux passants et plaisante avec chacun, sans façons.",
+          "answer": "bonhomie",
+          "why": {
+            "bonhomie": "Une simplicité chaleureuse qui met à l'aise.",
+            "condescendance": "Il ne se met pas au-dessus des autres.",
+            "connivence": "Il n'y a pas d'entente secrète.",
+            "deference": "C'est lui qu'on pourrait respecter, mais il ne marque aucune déférence."
+          }
+        },
+        {
+          "prompt": "Elle s'adresse au vieux professeur en baissant la voix, avec beaucoup d'égards.",
+          "answer": "deference",
+          "why": {
+            "deference": "Un respect plein d'égards, dû à l'âge ou au rang.",
+            "condescendance": "C'est l'inverse : elle ne se croit pas supérieure.",
+            "bonhomie": "Il n'y a pas de familiarité sans façons.",
+            "connivence": "Il n'y a pas de complicité."
+          }
+        }
+      ]
+    },
+    {
+      "id": "apparence",
+      "name": "Tromper par l'apparence",
+      "words": [
+        "fallacieux",
+        "specieux",
+        "insidieux",
+        "illusoire"
+      ],
+      "discriminations": [
+        {
+          "prompt": "Il se dit malade pour manquer la réunion, alors qu'il part en week-end.",
+          "answer": "fallacieux",
+          "why": {
+            "fallacieux": "Un prétexte inventé pour tromper.",
+            "specieux": "Spécieux qualifie un raisonnement séduisant mais faux, pas un mensonge.",
+            "insidieux": "Il n'y a pas de piège sournois.",
+            "illusoire": "Le prétexte n'est pas vain : il est mensonger."
+          }
+        },
+        {
+          "prompt": "« Ce qui est rare est cher ; un bon appartement bon marché est rare ; donc il est cher. » Le raisonnement a l'air logique.",
+          "answer": "specieux",
+          "why": {
+            "specieux": "Un raisonnement qui n'a que l'apparence de la justesse.",
+            "fallacieux": "Possible, mais fallacieux suppose une intention de tromper.",
+            "insidieux": "Ce n'est pas un piège qui progresse sournoisement.",
+            "illusoire": "Illusoire qualifie un espoir ou un avantage, pas un raisonnement."
+          }
+        },
+        {
+          "prompt": "L'humidité ronge la charpente pendant des années sans que rien ne se voie.",
+          "answer": "insidieux",
+          "why": {
+            "insidieux": "Un mal qui progresse sournoisement, sans se faire remarquer.",
+            "fallacieux": "Personne ne cherche à tromper.",
+            "specieux": "Il n'y a pas de raisonnement.",
+            "illusoire": "Le danger est bien réel."
+          }
+        },
+        {
+          "prompt": "Croire qu'on parlera couramment japonais après trois jours d'application : un espoir…",
+          "answer": "illusoire",
+          "why": {
+            "illusoire": "Un espoir qui ne se réalisera pas.",
+            "fallacieux": "L'espoir n'est pas un mensonge destiné à tromper.",
+            "specieux": "Il ne s'agit pas d'un raisonnement.",
+            "insidieux": "Il n'y a rien de sournois."
+          }
+        }
+      ]
+    },
+    {
+      "id": "prudence",
+      "name": "Prudence et crainte",
+      "words": [
+        "circonspect",
+        "precautionneux",
+        "timore"
+      ],
+      "discriminations": [
+        {
+          "prompt": "Avant de croire la rumeur, le journaliste attend de l'avoir vérifiée par deux sources.",
+          "answer": "circonspect",
+          "why": {
+            "circonspect": "Il réserve son jugement avant de conclure.",
+            "precautionneux": "Précautionneux porte sur les gestes, le soin, plus que sur le jugement.",
+            "timore": "Ce n'est pas la peur qui le retient, c'est la rigueur."
+          }
+        },
+        {
+          "prompt": "Le démineur retire chaque fil avec une lenteur et un soin extrêmes.",
+          "answer": "precautionneux",
+          "why": {
+            "precautionneux": "Des gestes attentifs pour éviter tout dommage.",
+            "circonspect": "Il ne s'agit pas de suspendre un jugement.",
+            "timore": "Il ose : il fait son travail sans reculer."
+          }
+        },
+        {
+          "prompt": "Par peur de l'échec, il ne s'est jamais présenté au concours dont il rêvait.",
+          "answer": "timore",
+          "why": {
+            "timore": "Une prudence née de la peur, qui l'empêche d'agir.",
+            "circonspect": "Circonspect est une qualité ; ici, c'est un manque d'audace.",
+            "precautionneux": "Il ne s'agit pas de soin dans les gestes."
+          }
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "id": "placide",
+      "lemma": "placide",
+      "phon": "pla.sid",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Du latin placidus, « paisible ».",
+      "family": "calme",
+      "definition": "D'un calme doux et serein, que rien ne semble troubler.",
+      "explanation": "La placidité est tranquille, presque immobile : elle peut aller jusqu'à une certaine lenteur à réagir.",
+      "example": "Au milieu des cris des enfants, la grand-mère tricotait, {placide}.",
+      "nuance": "calme paisible, que rien ne trouble",
+      "synonyms": [
+        "paisible",
+        "serein",
+        "tranquille"
+      ],
+      "antonyms": [
+        "nerveux",
+        "agité",
+        "emporté"
+      ],
+      "pitfall": "Pas toujours un compliment : placide peut suggérer un manque de réaction.",
+      "cloze": "Malgré les cris des passagers, le conducteur restait ___ derrière son volant.",
+      "situations": [
+        {
+          "prompt": "Le bébé hurle, la casserole déborde, le téléphone sonne : ton colocataire termine tranquillement son café sans s'émouvoir. Il est…"
+        }
+      ],
+      "source": {
+        "definition": "Qui est doux, paisible, calme."
+      }
+    },
+    {
+      "id": "nonchalant",
+      "lemma": "nonchalant",
+      "phon": "nɔ̃.ʃa.lɑ̃",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "De l'ancien verbe nonchaloir, « ne pas se soucier de ».",
+      "family": "calme",
+      "definition": "Qui agit sans ardeur ni empressement, avec une indifférence un peu molle.",
+      "explanation": "La nonchalance se voit dans l'allure : on marche, on parle, on travaille sans se presser, comme si rien n'importait vraiment.",
+      "example": "Il traversa la cour d'un pas {nonchalant}, les mains dans les poches, alors que la cloche avait sonné.",
+      "nuance": "sans ardeur, avec une lenteur détachée",
+      "synonyms": [
+        "indolent",
+        "insouciant",
+        "mou"
+      ],
+      "antonyms": [
+        "empressé",
+        "zélé",
+        "actif"
+      ],
+      "pitfall": "Peut être un charme (« une élégance nonchalante ») ou un reproche (« un élève nonchalant »).",
+      "cloze": "Elle répondit d'un ton ___, sans même lever les yeux de son téléphone.",
+      "situations": [
+        {
+          "prompt": "Ton collègue répond aux urgences sans jamais se presser, l'air de penser à autre chose. Il est…"
+        }
+      ],
+      "source": {
+        "definition": "Qui apporte de l'insouciance, un manque de zèle, d'ardeur à tout ce qu'il doit faire."
+      },
+      "role": "repère"
+    },
+    {
+      "id": "blase",
+      "lemma": "blasé",
+      "phon": "blɑ.ze",
+      "pos": "adjectif",
+      "register": "courant",
+      "etymology": "Participe passé de blaser, « émousser les sens à force d'excès ».",
+      "family": "calme",
+      "definition": "Qui, à force d'habitude, ne ressent plus d'émotion ni d'intérêt.",
+      "explanation": "Le blasé a trop vu, trop goûté : plus rien ne l'étonne ni ne l'enthousiasme.",
+      "construction": "blasé de quelque chose : blasé des voyages, des compliments.",
+      "example": "Après vingt ans de festival, le critique semblait {blasé} : même les meilleurs films le laissaient de marbre.",
+      "nuance": "plus rien ne l'émeut, par excès d'habitude",
+      "synonyms": [
+        "désabusé",
+        "lassé",
+        "indifférent"
+      ],
+      "antonyms": [
+        "enthousiaste",
+        "émerveillé"
+      ],
+      "pitfall": "Le blasé a connu l'émerveillement et l'a perdu : ce n'est pas une simple indifférence.",
+      "cloze": "À force de voyager, il est devenu ___ : même Venise ne l'émeut plus.",
+      "situations": [
+        {
+          "prompt": "Ton ami a visité trente pays ; devant les chutes du Niagara, il hausse les épaules : « Joli. » Il est…"
+        }
+      ],
+      "source": {
+        "definition": "Indifférent ; qui ne trouve plus d'intérêt à ce qu'il découvre."
+      },
+      "role": "repère"
+    },
+    {
+      "id": "impassible",
+      "lemma": "impassible",
+      "phon": "ɛ̃.pa.sibl",
+      "pos": "adjectif",
+      "register": "courant",
+      "role": "repère",
+      "etymology": "Du latin impassibilis, « insensible à la souffrance ».",
+      "family": "calme",
+      "definition": "Qui ne laisse paraître aucune émotion.",
+      "explanation": "On reste impassible par maîtrise de soi : le visage ne trahit rien, même sous le choc.",
+      "example": "Face aux accusations, l'accusé resta {impassible}.",
+      "nuance": "ne montre aucune émotion, par maîtrise de soi",
+      "synonyms": [
+        "imperturbable",
+        "stoïque"
+      ],
+      "antonyms": [
+        "ému",
+        "troublé"
+      ],
+      "cloze": "Le joueur de poker resta ___ en découvrant sa carte.",
+      "situations": [
+        {
+          "prompt": "Le garde reçoit des insultes sans qu'un muscle de son visage ne bouge. Il reste…"
+        }
+      ],
+      "source": {
+        "definition": "Qui est assez maître de lui pour ne pas laisser paraître ses souffrances physiques ou ses émotions."
+      }
+    },
+    {
+      "id": "exhorter",
+      "lemma": "exhorter",
+      "phon": "ɛɡ.zɔʁ.te",
+      "pos": "verbe",
+      "register": "soutenu",
+      "etymology": "Du latin exhortari, « encourager ».",
+      "family": "pousser",
+      "definition": "Encourager vivement quelqu'un à faire quelque chose, par la parole.",
+      "explanation": "L'exhortation cherche à convaincre et à motiver : un entraîneur exhorte ses joueurs, un orateur exhorte la foule.",
+      "construction": "exhorter quelqu'un à quelque chose, à + infinitif.",
+      "example": "Le maire a {exhorté} les habitants à économiser l'eau pendant la canicule.",
+      "nuance": "encourage avec force, pour motiver",
+      "synonyms": [
+        "encourager",
+        "inciter",
+        "appeler à"
+      ],
+      "antonyms": [
+        "dissuader",
+        "décourager"
+      ],
+      "pitfall": "Le h est muet : « ég-zor-té ». Le nom est « exhortation ».",
+      "cloze": "Le capitaine ___ ses coéquipiers à ne rien lâcher.",
+      "clozeAnswer": "exhorte",
+      "situations": [
+        {
+          "prompt": "À la mi-temps, l'entraîneur harangue ses joueurs pour qu'ils se battent jusqu'au bout. Il les…"
+        }
+      ],
+      "source": {
+        "definition": "Exciter, encourager par ses paroles. S'efforcer par le discours de porter quelqu'un à faire quelque chose."
+      },
+      "role": "repère"
+    },
+    {
+      "id": "enjoindre",
+      "lemma": "enjoindre",
+      "phon": "ɑ̃.ʒwɛ̃dʁ",
+      "pos": "verbe",
+      "register": "soutenu",
+      "etymology": "Du latin injungere, « imposer ».",
+      "family": "pousser",
+      "definition": "Ordonner expressément, avec autorité.",
+      "explanation": "Enjoindre, c'est donner un ordre formel, souvent officiel : une administration, un juge, un supérieur enjoint de faire quelque chose.",
+      "construction": "enjoindre à quelqu'un de + infinitif.",
+      "example": "La préfecture leur a {enjoint} de quitter le bâtiment avant midi.",
+      "nuance": "ordonne formellement, avec autorité",
+      "synonyms": [
+        "ordonner",
+        "sommer",
+        "prescrire"
+      ],
+      "antonyms": [
+        "permettre",
+        "autoriser"
+      ],
+      "pitfall": "Construction : enjoindre À quelqu'un DE faire. « Le juge lui a enjoint de payer », et non « l'a enjoint à payer ».",
+      "cloze": "Le médecin lui ___ de cesser de fumer sans attendre.",
+      "clozeAnswer": "enjoint",
+      "situations": [
+        {
+          "prompt": "Une lettre officielle t'ordonne de régulariser ta situation fiscale sous huit jours. L'administration t'…"
+        }
+      ],
+      "source": {
+        "definition": "Ordonner expressément."
+      }
+    },
+    {
+      "id": "intimer",
+      "lemma": "intimer",
+      "phon": "ɛ̃.ti.me",
+      "pos": "verbe",
+      "register": "soutenu",
+      "etymology": "Du latin intimare, « faire connaître, notifier ».",
+      "family": "pousser",
+      "definition": "Signifier un ordre avec autorité, de façon impérieuse.",
+      "explanation": "S'emploie surtout dans « intimer l'ordre de » : l'ordre est donné sèchement, sans discussion possible.",
+      "construction": "intimer à quelqu'un l'ordre de + infinitif ; intimer le silence.",
+      "example": "D'un regard, la professeure nous {intima} le silence.",
+      "nuance": "signifie un ordre sèchement, sans réplique",
+      "synonyms": [
+        "commander",
+        "signifier",
+        "sommer"
+      ],
+      "antonyms": [
+        "prier",
+        "solliciter"
+      ],
+      "pitfall": "Rien à voir avec « intime » : intimer, c'est ordonner.",
+      "cloze": "Le policier leur a ___ l'ordre de reculer.",
+      "clozeAnswer": "intimé",
+      "situations": [
+        {
+          "prompt": "D'un ton sec, le policier ordonne aux curieux de reculer immédiatement. Il leur…"
+        }
+      ],
+      "source": {
+        "definition": "Faire savoir, signifier avec autorité. Ordonner."
+      }
+    },
+    {
+      "id": "adjurer",
+      "lemma": "adjurer",
+      "phon": "ad.ʒy.ʁe",
+      "pos": "verbe",
+      "register": "soutenu",
+      "etymology": "Du latin adjurare, « faire jurer, supplier ».",
+      "family": "pousser",
+      "definition": "Supplier avec insistance et gravité.",
+      "explanation": "On adjure quelqu'un quand l'enjeu est grave : c'est une prière pressante, presque désespérée. À l'origine, adjurer, c'était commander au nom de Dieu, notamment dans les exorcismes.",
+      "construction": "adjurer quelqu'un de + infinitif.",
+      "example": "Sa mère l'{adjura} de ne pas prendre la route sous cette tempête.",
+      "nuance": "supplie avec gravité et insistance",
+      "synonyms": [
+        "supplier",
+        "implorer",
+        "conjurer"
+      ],
+      "antonyms": [
+        "ordonner",
+        "exiger"
+      ],
+      "pitfall": "Ne pas confondre avec « abjurer » : renoncer solennellement à une croyance.",
+      "cloze": "Les sauveteurs ont ___ les randonneurs de ne pas s'aventurer sur le glacier.",
+      "clozeAnswer": "adjuré",
+      "situations": [
+        {
+          "prompt": "Les larmes aux yeux, ton amie te supplie de ne pas accepter ce travail dangereux. Elle t'…"
+        }
+      ],
+      "source": {
+        "definition": "Commander au nom de Dieu de faire ou de dire quelque chose. S'emploie aussi d'une manière générale."
+      }
+    },
+    {
+      "id": "narquois",
+      "lemma": "narquois",
+      "phon": "naʁ.kwa",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Mot d'argot ancien, d'origine incertaine.",
+      "family": "moquerie",
+      "definition": "Qui se moque avec malice, d'un air de supériorité amusée.",
+      "explanation": "Le narquois ne dit souvent rien : un sourire, un regard suffisent à montrer qu'il se moque.",
+      "example": "Quand j'ai raté ma démonstration, il m'a lancé un sourire {narquois}.",
+      "nuance": "moquerie malicieuse et discrète, un peu supérieure",
+      "synonyms": [
+        "moqueur",
+        "ironique",
+        "malicieux"
+      ],
+      "antonyms": [
+        "admiratif",
+        "bienveillant"
+      ],
+      "pitfall": "S'emploie surtout pour un sourire, un regard, un ton : « un sourire narquois ».",
+      "cloze": "Elle me regarda chercher mes clés, un sourire ___ aux lèvres : elles étaient dans sa main.",
+      "situations": [
+        {
+          "prompt": "Ton frère, qui t'avait prévenu que le meuble serait trop grand, te regarde le démonter avec un petit sourire en coin. Un sourire…"
+        }
+      ],
+      "source": {
+        "definition": "Rusé, moqueur, ironique, malicieux."
+      },
+      "role": "repère"
+    },
+    {
+      "id": "goguenard",
+      "lemma": "goguenard",
+      "phon": "ɡɔɡ.naʁ",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "De l'ancien français gogue, « plaisanterie ».",
+      "family": "moquerie",
+      "definition": "Qui se moque avec une familiarité amusée, en spectateur qui rit de la situation.",
+      "explanation": "Le goguenard s'amuse franchement de la situation d'autrui, comme un badaud qui commente et rigole.",
+      "example": "Les ouvriers, {goguenards}, regardaient le jeune cadre patauger dans la boue avec ses chaussures neuves.",
+      "nuance": "moquerie amusée et familière, de spectateur",
+      "synonyms": [
+        "moqueur",
+        "gouailleur",
+        "railleur"
+      ],
+      "antonyms": [
+        "compatissant"
+      ],
+      "pitfall": "Moins fin que narquois : la moquerie goguenarde se voit et s'entend.",
+      "cloze": "Sur le quai, des pêcheurs ___ observaient le touriste s'emmêler dans ses cordages.",
+      "clozeAnswer": "goguenards",
+      "situations": [
+        {
+          "prompt": "Accoudés à la barrière, des voisins rigolent en te regardant rater ton créneau pour la troisième fois. Ils ont l'air…"
+        }
+      ],
+      "source": {
+        "definition": "Qui affecte la moquerie, la raillerie."
+      }
+    },
+    {
+      "id": "railleur",
+      "lemma": "railleur",
+      "phon": "ʁa.jœʁ",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Dérivé de railler, « se moquer ».",
+      "family": "moquerie",
+      "definition": "Qui aime se moquer, tourner les autres en ridicule.",
+      "explanation": "Railler, c'est se moquer ouvertement par des paroles : le railleur a la moquerie pour habitude ou pour arme.",
+      "example": "D'un ton {railleur}, elle lui demanda s'il comptait finir son roman avant sa retraite.",
+      "nuance": "moquerie en paroles, volontiers piquante",
+      "synonyms": [
+        "moqueur",
+        "persifleur",
+        "caustique"
+      ],
+      "antonyms": [
+        "bienveillant",
+        "admiratif"
+      ],
+      "pitfall": "Féminin : railleuse. Le verbe est railler : « railler quelqu'un », c'est se moquer de lui.",
+      "cloze": "Il avait l'esprit ___ et ne laissait passer aucune occasion de piquer ses amis.",
+      "situations": [
+        {
+          "prompt": "À chaque repas de famille, ton oncle trouve une pique pour se moquer de tes choix d'études. Il est…"
+        }
+      ],
+      "source": {
+        "definition": "Porté à la raillerie. Qui est empreint de railleries, qui est dit pour railler."
+      }
+    },
+    {
+      "id": "sardonique",
+      "lemma": "sardonique",
+      "phon": "saʁ.dɔ.nik",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Du grec sardonios, d'après une plante de Sardaigne qui provoquait un rictus convulsif.",
+      "family": "moquerie",
+      "definition": "D'une moquerie amère et méchante, souvent dans un rire ou un sourire grinçant.",
+      "explanation": "Le rire sardonique est cruel : on se réjouit du malheur d'autrui ou on le méprise.",
+      "example": "En apprenant la faillite de son rival, il eut un rire {sardonique}.",
+      "nuance": "moquerie méchante, cruelle",
+      "synonyms": [
+        "grinçant",
+        "cynique",
+        "méchant"
+      ],
+      "antonyms": [
+        "bienveillant",
+        "chaleureux"
+      ],
+      "pitfall": "S'emploie surtout dans « rire sardonique » et « sourire sardonique ».",
+      "cloze": "Le méchant regarda le héros tomber dans son piège avec un sourire ___.",
+      "situations": [
+        {
+          "prompt": "Le cambrioleur ligoté entend la sirène de police… et le propriétaire qu'il a volé éclate d'un rire grinçant et cruel. Un rire…"
+        }
+      ],
+      "source": {
+        "definition": "Qui révèle une pensée, une intention méchante."
+      }
+    },
+    {
+      "id": "sarcastique",
+      "lemma": "sarcastique",
+      "phon": "saʁ.kas.tik",
+      "pos": "adjectif",
+      "register": "courant",
+      "role": "repère",
+      "etymology": "Dérivé de sarcasme, du grec sarkasmos, « morsure ».",
+      "family": "moquerie",
+      "definition": "Qui manifeste une ironie mordante, blessante.",
+      "explanation": "Le sarcasme dit souvent le contraire de ce qu'il pense, pour blesser.",
+      "example": "« Bravo, quel génie », lança-t-elle d'un ton {sarcastique} après sa bourde.",
+      "nuance": "ironie mordante, en paroles",
+      "synonyms": [
+        "ironique",
+        "caustique",
+        "mordant"
+      ],
+      "antonyms": [
+        "sincère"
+      ],
+      "cloze": "Sa remarque ___ sur mon retard a jeté un froid.",
+      "clozeAnswer": "sarcastique",
+      "situations": [
+        {
+          "prompt": "Après ton retard, ta cheffe te lance : « Merci d'honorer notre réunion de ta présence. » Un ton…"
+        }
+      ],
+      "source": {
+        "definition": "Qui tient du sarcasme, c'est-à-dire de la raillerie ou moquerie acerbe et insultante."
+      }
+    },
+    {
+      "id": "recuser",
+      "lemma": "récuser",
+      "phon": "ʁe.ky.ze",
+      "pos": "verbe",
+      "register": "soutenu",
+      "etymology": "Du latin recusare, « refuser ».",
+      "family": "contester",
+      "definition": "Refuser d'admettre l'autorité, la compétence ou la valeur de quelqu'un ou de quelque chose.",
+      "explanation": "Au tribunal, on récuse un juge ou un témoin qu'on estime partial. Ailleurs, on récuse une accusation, un argument, un mot, en refusant de les reconnaître.",
+      "construction": "récuser quelqu'un (un juge, un témoin) ; récuser quelque chose (une accusation, un terme).",
+      "example": "Il {récuse} le terme de « licenciement » : selon lui, il s'agit d'une réorganisation.",
+      "nuance": "refuse de reconnaître une autorité, une valeur",
+      "synonyms": [
+        "rejeter",
+        "contester",
+        "refuser"
+      ],
+      "antonyms": [
+        "admettre",
+        "reconnaître"
+      ],
+      "pitfall": "Ne pas confondre avec réfuter, qui veut dire démontrer qu'une chose est fausse.",
+      "cloze": "La défense a ___ ce témoin, qu'elle jugeait trop proche de la victime.",
+      "clozeAnswer": "récusé",
+      "situations": [
+        {
+          "prompt": "Ton collègue refuse que son rival évalue son projet, car il le juge partial. Il le…"
+        }
+      ],
+      "source": {
+        "definition": "Refuser de soumettre sa cause à un juge qu'on craint partial. Se dit pareillement de toutes les personnes dont on rejette l'autorité ou le témoignage."
+      }
+    },
+    {
+      "id": "desavouer",
+      "lemma": "désavouer",
+      "phon": "de.za.vwe",
+      "pos": "verbe",
+      "register": "soutenu",
+      "etymology": "De dé- et avouer, au sens ancien de « reconnaître comme sien ».",
+      "family": "contester",
+      "definition": "Refuser de reconnaître comme sien ce qui a été dit ou fait ; désapprouver publiquement quelqu'un de son camp.",
+      "explanation": "Un parti désavoue un élu qui a dérapé ; un auteur désavoue un texte de jeunesse. On retire son soutien, devant tous.",
+      "construction": "désavouer quelqu'un (un porte-parole, un élu) ; désavouer quelque chose (des propos).",
+      "example": "Après ses propos racistes, le candidat a été {désavoué} par son propre parti.",
+      "nuance": "retire publiquement son soutien, renie",
+      "synonyms": [
+        "renier",
+        "désapprouver",
+        "se désolidariser"
+      ],
+      "antonyms": [
+        "approuver",
+        "soutenir",
+        "assumer"
+      ],
+      "pitfall": "Désavouer est public : on prend ses distances devant tous.",
+      "cloze": "Le club a ___ son entraîneur après ses déclarations violentes.",
+      "clozeAnswer": "désavoué",
+      "situations": [
+        {
+          "prompt": "L'entreprise annonce publiquement qu'elle ne cautionne pas les propos de son directeur commercial. Elle le…"
+        }
+      ],
+      "source": {
+        "definition": "Nier d'avoir dit ou fait quelque chose. Ne vouloir pas reconnaître une chose, voire une personne, pour sienne."
+      }
+    },
+    {
+      "id": "objecter",
+      "lemma": "objecter",
+      "phon": "ɔb.ʒɛk.te",
+      "pos": "verbe",
+      "register": "soutenu",
+      "etymology": "Du latin objectare, « placer devant, opposer ».",
+      "family": "contester",
+      "definition": "Opposer un argument, une raison contraire.",
+      "explanation": "Objecter, c'est répondre « oui, mais… » : on avance une difficulté, sans forcément tout rejeter.",
+      "construction": "objecter quelque chose à quelqu'un ; objecter que + indicatif.",
+      "example": "À mon projet de voyage, mes parents ont {objecté} que je n'avais pas de quoi le payer.",
+      "nuance": "oppose une raison contraire",
+      "synonyms": [
+        "opposer",
+        "rétorquer",
+        "répliquer"
+      ],
+      "antonyms": [
+        "approuver",
+        "acquiescer"
+      ],
+      "pitfall": "Le nom est « objection ». Un objecteur de conscience refuse le service armé.",
+      "cloze": "« Et qui paiera ? », ___-t-elle aussitôt.",
+      "clozeAnswer": "objecta",
+      "situations": [
+        {
+          "prompt": "On te propose une randonnée samedi ; tu réponds que la météo annonce un orage. Tu…"
+        }
+      ],
+      "source": {
+        "definition": "Opposer un argument ou une affirmation. Opposer une difficulté, un empêchement, un obstacle à une demande."
+      }
+    },
+    {
+      "id": "eluder",
+      "lemma": "éluder",
+      "phon": "e.ly.de",
+      "pos": "verbe",
+      "register": "soutenu",
+      "etymology": "Du latin eludere, « se jouer de, esquiver ».",
+      "family": "contester",
+      "definition": "Éviter avec adresse de répondre à une question ou de traiter un problème.",
+      "explanation": "On élude ce qui dérange : une question gênante, une difficulté, un sujet sensible.",
+      "construction": "éluder une question, un problème, une difficulté.",
+      "example": "Interrogé sur ses comptes, le ministre a habilement {éludé} la question.",
+      "nuance": "évite habilement une question, un problème",
+      "synonyms": [
+        "esquiver",
+        "contourner",
+        "escamoter"
+      ],
+      "antonyms": [
+        "affronter",
+        "aborder"
+      ],
+      "pitfall": "On élude une question, pas une personne.",
+      "cloze": "Le rapport ___ soigneusement la question des coûts.",
+      "clozeAnswer": "élude",
+      "situations": [
+        {
+          "prompt": "En entretien, quand on te demande pourquoi tu as quitté ton ancien poste, tu changes habilement de sujet. Tu…"
+        }
+      ],
+      "source": {
+        "definition": "Éviter avec adresse par désir de se dérober."
+      }
+    },
+    {
+      "id": "refuter",
+      "lemma": "réfuter",
+      "phon": "ʁe.fy.te",
+      "pos": "verbe",
+      "register": "courant",
+      "role": "repère",
+      "etymology": "Du latin refutare, « repousser ».",
+      "family": "contester",
+      "definition": "Démontrer, par des arguments, qu'une affirmation est fausse.",
+      "explanation": "Réfuter, c'est prouver le contraire, pas seulement contester.",
+      "construction": "réfuter un argument, une thèse, une accusation.",
+      "example": "Les chercheurs ont {réfuté} cette théorie grâce à de nouvelles mesures.",
+      "nuance": "démontre qu'une affirmation est fausse",
+      "synonyms": [
+        "démentir",
+        "contredire"
+      ],
+      "antonyms": [
+        "confirmer"
+      ],
+      "cloze": "Chiffres à l'appui, elle a ___ point par point les accusations.",
+      "clozeAnswer": "réfuté",
+      "situations": [
+        {
+          "prompt": "Avec des chiffres précis, tu prouves que l'affirmation de ton adversaire est fausse. Tu la…"
+        }
+      ],
+      "source": {
+        "definition": "Prouver que ce qu'un adversaire a dit est mal fondé ou n'est pas vrai."
+      }
+    },
+    {
+      "id": "volubile",
+      "lemma": "volubile",
+      "phon": "vɔ.ly.bil",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Du latin volubilis, « qui tourne facilement ».",
+      "family": "discours",
+      "definition": "Qui parle beaucoup et vite, avec facilité.",
+      "explanation": "Le volubile a un débit rapide et abondant, sans être forcément ennuyeux.",
+      "example": "Ravie de nous revoir, notre hôtesse, très {volubile}, nous raconta tout son été en dix minutes.",
+      "nuance": "parle beaucoup et vite",
+      "synonyms": [
+        "bavard",
+        "loquace",
+        "intarissable"
+      ],
+      "antonyms": [
+        "taciturne",
+        "laconique"
+      ],
+      "pitfall": "En botanique, une plante volubile s'enroule autour d'un support, comme le liseron.",
+      "cloze": "Le vendeur, ___, ne me laissa pas placer un mot.",
+      "situations": [
+        {
+          "prompt": "Ta voisine enchaîne les anecdotes à toute vitesse, sans reprendre son souffle. Elle est…"
+        }
+      ],
+      "source": {
+        "definition": "(figuré) Qui parle beaucoup, avec aisance et rapidité."
+      }
+    },
+    {
+      "id": "sentencieux",
+      "lemma": "sentencieux",
+      "phon": "sɑ̃.tɑ̃.sjø",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Du latin sententiosus, « riche en pensées ».",
+      "family": "discours",
+      "definition": "Qui s'exprime par maximes, sur un ton grave et moralisateur.",
+      "explanation": "Le sentencieux énonce des vérités générales comme des sentences, avec une gravité qui peut agacer.",
+      "example": "« La patience est mère de toutes les vertus », déclara-t-il d'un ton {sentencieux}.",
+      "nuance": "ton grave et moralisateur, en maximes",
+      "synonyms": [
+        "doctoral",
+        "pontifiant",
+        "solennel"
+      ],
+      "antonyms": [
+        "simple",
+        "léger"
+      ],
+      "pitfall": "Souvent péjoratif : on lui reproche de faire la leçon.",
+      "cloze": "Son discours ___ sur « la valeur du travail » ennuya toute la salle.",
+      "situations": [
+        {
+          "prompt": "Ton oncle ponctue chaque conversation de maximes graves comme « Qui veut aller loin ménage sa monture ». Il est…"
+        }
+      ],
+      "source": {
+        "definition": "Qui s'exprime ordinairement par sentences, par maximes. Qualifie un ton solennel, un ton de gravité affectée."
+      }
+    },
+    {
+      "id": "grandiloquent",
+      "lemma": "grandiloquent",
+      "phon": "ɡʁɑ̃.di.lɔ.kɑ̃",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Du latin grandiloquus, « au langage sublime ».",
+      "family": "discours",
+      "definition": "Qui s'exprime avec une emphase excessive, en grands mots pompeux.",
+      "explanation": "Le discours grandiloquent emploie des mots trop grands pour son sujet : il veut impressionner et sonne creux.",
+      "example": "Pour inaugurer un rond-point, le maire prononça un discours {grandiloquent} sur « l'avenir radieux de notre civilisation ».",
+      "nuance": "grands mots pompeux, souvent creux",
+      "synonyms": [
+        "pompeux",
+        "ampoulé",
+        "emphatique"
+      ],
+      "antonyms": [
+        "sobre",
+        "simple"
+      ],
+      "pitfall": "Toujours péjoratif. Le nom est « grandiloquence ».",
+      "cloze": "La publicité, ___, présentait un simple aspirateur comme « l'invention du siècle ».",
+      "clozeAnswer": "grandiloquente",
+      "situations": [
+        {
+          "prompt": "Pour annoncer l'ouverture d'une boulangerie, le communiqué parle d'« un moment historique pour l'humanité ». Un style…"
+        }
+      ],
+      "source": {
+        "definition": "Qui s'exprime avec grandiloquence."
+      }
+    },
+    {
+      "id": "emphatique",
+      "lemma": "emphatique",
+      "phon": "ɑ̃.fa.tik",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Du grec emphatikos, « expressif ».",
+      "family": "discours",
+      "definition": "Qui exagère le ton, l'expression ou le geste pour produire de l'effet.",
+      "explanation": "L'emphase grossit le ton : on appuie trop, on gonfle la voix. En grammaire, une tournure emphatique met un mot en relief : « C'est lui qui… ».",
+      "example": "Il lisait son poème d'une voix {emphatique}, en roulant les r et en levant les bras.",
+      "nuance": "exagère le ton pour faire de l'effet",
+      "synonyms": [
+        "déclamatoire",
+        "ampoulé",
+        "pompeux"
+      ],
+      "antonyms": [
+        "sobre",
+        "naturel"
+      ],
+      "pitfall": "Grandiloquent porte sur les mots choisis ; emphatique, surtout sur le ton et la manière.",
+      "cloze": "Au mariage, le témoin déclama son discours sur un ton ___, en appuyant chaque mot.",
+      "situations": [
+        {
+          "prompt": "L'acteur force sa voix et multiplie les grands gestes pour dire une réplique toute simple. Un jeu…"
+        }
+      ],
+      "source": {
+        "definition": "Qualifie ce qui est enflé et ampoulé dans l'expression écrite ou orale ; un discours prononcé avec exagération prétentieuse."
+      }
+    },
+    {
+      "id": "condescendance",
+      "lemma": "condescendance",
+      "phon": "kɔ̃.de.sɑ̃.dɑ̃s",
+      "pos": "nom féminin",
+      "register": "soutenu",
+      "etymology": "Dérivé de condescendre, « descendre au niveau de quelqu'un ».",
+      "family": "manieres",
+      "definition": "Attitude de supériorité, aimable en apparence, envers ceux qu'on juge inférieurs.",
+      "explanation": "La gentillesse est réelle en surface, mais elle laisse sentir qu'on se croit au-dessus.",
+      "construction": "avec condescendance ; la condescendance de quelqu'un envers quelqu'un.",
+      "example": "Il m'expliqua avec {condescendance} que « ce genre de dossier était sans doute un peu complexe pour moi ».",
+      "nuance": "supériorité qui se donne des airs aimables",
+      "synonyms": [
+        "dédain",
+        "hauteur",
+        "morgue"
+      ],
+      "antonyms": [
+        "humilité",
+        "simplicité",
+        "respect"
+      ],
+      "pitfall": "Péjoratif aujourd'hui. L'adjectif est « condescendant ».",
+      "cloze": "Le vendeur m'a répondu avec une ___ insupportable, comme si je n'y connaissais rien.",
+      "situations": [
+        {
+          "prompt": "Le vendeur t'explique très lentement, avec un sourire supérieur, comment allumer un ordinateur. Il te parle avec…"
+        }
+      ],
+      "source": {
+        "definition": "Bienveillance mêlée d'un léger mépris ; comportement distant, presque hautain."
+      }
+    },
+    {
+      "id": "connivence",
+      "lemma": "connivence",
+      "phon": "kɔ.ni.vɑ̃s",
+      "pos": "nom féminin",
+      "register": "soutenu",
+      "etymology": "Du latin conivere, « fermer les yeux », d'où « fermer les yeux sur une faute ».",
+      "family": "manieres",
+      "definition": "Complicité, entente secrète entre des personnes.",
+      "explanation": "La connivence peut être tendre (un regard de connivence entre amis) ou coupable (la connivence entre un gardien et un voleur).",
+      "construction": "être de connivence avec quelqu'un ; un sourire, un regard de connivence.",
+      "example": "Les deux sœurs échangèrent un regard de {connivence} : elles avaient compris la même chose.",
+      "nuance": "complicité, entente tacite",
+      "synonyms": [
+        "complicité",
+        "entente",
+        "collusion"
+      ],
+      "antonyms": [
+        "hostilité",
+        "désaccord"
+      ],
+      "pitfall": "Deux n : connivence.",
+      "cloze": "Le gardien était de ___ avec les cambrioleurs.",
+      "situations": [
+        {
+          "prompt": "Au dîner, deux vieux amis échangent un clin d'œil : ils pensent la même blague sans la dire. Il y a entre eux de la…"
+        }
+      ],
+      "source": {
+        "definition": "Complicité par tolérance et dissimulation d'un mal qu'on peut empêcher. Entente secrète ou tacite."
+      }
+    },
+    {
+      "id": "bonhomie",
+      "lemma": "bonhomie",
+      "phon": "bɔ.nɔ.mi",
+      "pos": "nom féminin",
+      "register": "soutenu",
+      "etymology": "Dérivé de bonhomme.",
+      "family": "manieres",
+      "definition": "Simplicité dans les manières, alliée à la bonté.",
+      "explanation": "La bonhomie met à l'aise : simple, chaleureuse, sans façons. Elle peut parfois cacher une ruse : « une fausse bonhomie ».",
+      "construction": "avec bonhomie ; un air de bonhomie.",
+      "example": "Malgré son titre de ministre, il nous accueillit avec une {bonhomie} qui nous mit tout de suite à l'aise.",
+      "nuance": "simplicité chaleureuse, sans façons",
+      "synonyms": [
+        "simplicité",
+        "cordialité",
+        "bienveillance"
+      ],
+      "antonyms": [
+        "morgue",
+        "raideur",
+        "hauteur"
+      ],
+      "pitfall": "Un seul m : bonhomie, alors qu'on écrit bonhomme. Sens plus rare et défavorable : une simplicité excessive, une certaine crédulité.",
+      "cloze": "Le chef étoilé plaisantait avec les clients avec une ___ inattendue.",
+      "situations": [
+        {
+          "prompt": "Le grand chef vient en salle en tablier, plaisante avec les clients et les met à l'aise sans façons. Il a de la…"
+        }
+      ],
+      "source": {
+        "definition": "Manière d'être et d'agir qui laisse voir la bonté du cœur unie à la simplicité extérieure."
+      }
+    },
+    {
+      "id": "deference",
+      "lemma": "déférence",
+      "phon": "de.fe.ʁɑ̃s",
+      "pos": "nom féminin",
+      "register": "soutenu",
+      "role": "repère",
+      "etymology": "Dérivé de déférer, « céder par respect ».",
+      "family": "manieres",
+      "definition": "Respect plein d'égards envers quelqu'un, en raison de son âge, de son rang ou de son mérite.",
+      "explanation": "La déférence se voit dans les égards : on cède la parole, on baisse la voix, on attend.",
+      "construction": "avec déférence ; par déférence pour quelqu'un.",
+      "example": "Les élèves se levèrent avec {déférence} à l'entrée du vieux professeur.",
+      "nuance": "respect plein d'égards",
+      "synonyms": [
+        "respect",
+        "considération",
+        "égards"
+      ],
+      "antonyms": [
+        "irrévérence",
+        "insolence"
+      ],
+      "cloze": "Par ___ pour son aînée, elle la laissa parler la première.",
+      "situations": [
+        {
+          "prompt": "Tu laisses par respect la parole à ta grand-tante et tu l'écoutes avec beaucoup d'égards. Tu agis par…"
+        }
+      ],
+      "source": {
+        "definition": "Respect qui porte à témoigner de la considération pour le statut, la fonction ou l'autorité de quelqu'un."
+      }
+    },
+    {
+      "id": "fallacieux",
+      "lemma": "fallacieux",
+      "phon": "fa.la.sjø",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Du latin fallaciosus, de fallere, « tromper ».",
+      "family": "apparence",
+      "definition": "Qui est fait pour tromper, sous une apparence de vérité.",
+      "explanation": "Un argument, une promesse, un prétexte fallacieux sont conçus pour induire en erreur.",
+      "example": "Il s'est absenté sous un prétexte {fallacieux} : il n'avait aucun rendez-vous médical.",
+      "nuance": "conçu pour tromper",
+      "synonyms": [
+        "trompeur",
+        "mensonger",
+        "captieux"
+      ],
+      "antonyms": [
+        "véridique",
+        "sincère",
+        "fondé"
+      ],
+      "pitfall": "« Sous un prétexte fallacieux » : sous un faux prétexte.",
+      "cloze": "Cette publicité repose sur des promesses ___ : aucun produit ne fait maigrir en dormant.",
+      "clozeAnswer": "fallacieuses",
+      "situations": [
+        {
+          "prompt": "Pour te vendre une assurance, le démarcheur affirme qu'elle est « obligatoire depuis cette année », ce qui est faux. Un argument…"
+        }
+      ],
+      "source": {
+        "definition": "Qui est fondé sur un mensonge ou un faux. Qui vise à tromper."
+      }
+    },
+    {
+      "id": "specieux",
+      "lemma": "spécieux",
+      "phon": "spe.sjø",
+      "pos": "adjectif",
+      "register": "littéraire",
+      "etymology": "Du latin speciosus, « de bel aspect ».",
+      "family": "apparence",
+      "definition": "Qui n'a que l'apparence de la vérité ou de la justesse.",
+      "explanation": "Un raisonnement spécieux paraît juste au premier abord, mais il ne tient pas quand on l'examine.",
+      "example": "Son argument est {spécieux} : il semble logique, mais il repose sur une confusion.",
+      "nuance": "paraît juste mais ne l'est pas (un raisonnement)",
+      "synonyms": [
+        "captieux",
+        "fallacieux",
+        "trompeur"
+      ],
+      "antonyms": [
+        "rigoureux",
+        "solide",
+        "juste"
+      ],
+      "pitfall": "Le spécieux séduit par son apparence ; le fallacieux suppose en plus une intention de tromper.",
+      "cloze": "L'avocat démonta ce raisonnement ___ en une seule question.",
+      "situations": [
+        {
+          "prompt": "« Je n'ai jamais eu d'accident, donc je conduis bien même fatigué » : l'argument semble tenir, mais il est faux. Un raisonnement…"
+        }
+      ],
+      "source": {
+        "definition": "Qui a une apparence de vérité et de justice, mais qui n'en a, effectivement, que l'apparence."
+      }
+    },
+    {
+      "id": "insidieux",
+      "lemma": "insidieux",
+      "phon": "ɛ̃.si.djø",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Du latin insidiosus, de insidiae, « embûches ».",
+      "family": "apparence",
+      "definition": "Qui tend un piège, qui agit sournoisement ; se dit aussi d'un mal qui progresse sans se faire remarquer.",
+      "explanation": "Une question insidieuse cache un piège ; une maladie insidieuse avance sans symptômes visibles.",
+      "example": "La fatigue s'installe de façon {insidieuse} : on ne la remarque que lorsqu'il est trop tard.",
+      "nuance": "agit sournoisement, sans se faire voir",
+      "synonyms": [
+        "sournois",
+        "perfide",
+        "pernicieux"
+      ],
+      "antonyms": [
+        "franc",
+        "manifeste"
+      ],
+      "pitfall": "S'emploie beaucoup pour un mal, une maladie, une influence : « un poison insidieux ».",
+      "cloze": "Le journaliste lui posa une question ___, conçue pour le faire se contredire.",
+      "clozeAnswer": "insidieuse",
+      "situations": [
+        {
+          "prompt": "Sans que personne ne s'en rende compte, la méfiance gagne peu à peu toute l'équipe. Une méfiance…"
+        }
+      ],
+      "source": {
+        "definition": "Qui tend des embûches, un piège à quelqu'un. Qualifie une maladie dont le diagnostic est difficile."
+      }
+    },
+    {
+      "id": "illusoire",
+      "lemma": "illusoire",
+      "phon": "i.ly.zwaʁ",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Du latin illusorius, « trompeur ».",
+      "family": "apparence",
+      "definition": "Qui n'a que l'apparence de la réalité ; qui ne peut aboutir.",
+      "explanation": "Un espoir, une sécurité, un avantage illusoires n'existent pas vraiment ou ne se réaliseront pas.",
+      "example": "Il est {illusoire} d'espérer finir ce chantier en deux semaines.",
+      "nuance": "n'existe qu'en apparence, vain",
+      "synonyms": [
+        "vain",
+        "chimérique",
+        "trompeur"
+      ],
+      "antonyms": [
+        "réel",
+        "effectif"
+      ],
+      "pitfall": "Ne qualifie pas une personne : on parle d'un espoir illusoire, pas d'un « homme illusoire ».",
+      "cloze": "Une serrure qui s'ouvre avec n'importe quelle clé offre une sécurité ___.",
+      "situations": [
+        {
+          "prompt": "Croire qu'une seule séance de sport par mois suffira à préparer un marathon : un espoir…"
+        }
+      ],
+      "source": {
+        "definition": "Qui relève de l'illusion, qui est sans effet, qui ne repose sur rien."
+      },
+      "role": "repère"
+    },
+    {
+      "id": "circonspect",
+      "lemma": "circonspect",
+      "phon": "siʁ.kɔ̃s.pɛ",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Du latin circumspectus, « qui regarde autour de soi ».",
+      "family": "prudence",
+      "definition": "Qui agit ou juge avec prudence, après avoir pesé toutes les circonstances.",
+      "explanation": "Le circonspect réserve son jugement : il observe, vérifie, se méfie des conclusions hâtives.",
+      "example": "Face à ces résultats trop beaux pour être vrais, les investisseurs restent {circonspects}.",
+      "nuance": "prudent dans son jugement, réservé",
+      "synonyms": [
+        "prudent",
+        "réservé",
+        "mesuré"
+      ],
+      "antonyms": [
+        "imprudent",
+        "téméraire",
+        "étourdi"
+      ],
+      "pitfall": "Les deux prononciations existent : « circonspè » ou « circonspèkt ».",
+      "cloze": "Le médecin est resté ___ : il préfère attendre les analyses avant de se prononcer.",
+      "situations": [
+        {
+          "prompt": "Avant de signer, ton amie relit tout, pose des questions et refuse de s'engager tant qu'elle n'a pas vérifié. Elle est…"
+        }
+      ],
+      "source": {
+        "definition": "Qui prend garde à ce qu'il dit, à ce qu'il fait, en ayant égard aux circonstances. Qui ne s'engage qu'après examen."
+      }
+    },
+    {
+      "id": "precautionneux",
+      "lemma": "précautionneux",
+      "phon": "pʁe.ko.sjɔ.nø",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Dérivé de précaution.",
+      "family": "prudence",
+      "definition": "Qui prend des précautions ; qui agit avec soin pour éviter tout dommage.",
+      "explanation": "Le précautionneux fait attention dans ses gestes et ses actes : il manipule, avance, range avec soin.",
+      "example": "D'un geste {précautionneux}, elle déballa le vase de sa grand-mère.",
+      "nuance": "attentif dans ses gestes, soigneux",
+      "synonyms": [
+        "soigneux",
+        "prudent",
+        "attentif"
+      ],
+      "antonyms": [
+        "brusque",
+        "négligent",
+        "insouciant"
+      ],
+      "pitfall": "Porte sur la manière d'agir ; pour la prudence du jugement, on dit plutôt circonspect.",
+      "cloze": "Il avança à pas ___ sur la glace du lac.",
+      "situations": [
+        {
+          "prompt": "Ton colocataire emballe chaque verre dans trois couches de papier avant le déménagement. Il est…"
+        }
+      ],
+      "source": {
+        "definition": "Qui prend des précautions, qui est prudent."
+      }
+    },
+    {
+      "id": "timore",
+      "lemma": "timoré",
+      "phon": "ti.mɔ.ʁe",
+      "pos": "adjectif",
+      "register": "soutenu",
+      "etymology": "Du latin timoratus, « qui craint Dieu ».",
+      "family": "prudence",
+      "definition": "Qui craint le risque et les responsabilités, au point de ne pas oser agir.",
+      "explanation": "Le timoré manque d'audace : sa prudence vient de la peur, et elle le paralyse.",
+      "example": "La direction, trop {timorée}, a refusé le projet par peur d'un échec.",
+      "nuance": "prudence née de la peur, qui paralyse",
+      "synonyms": [
+        "craintif",
+        "frileux",
+        "pusillanime"
+      ],
+      "antonyms": [
+        "audacieux",
+        "hardi",
+        "entreprenant"
+      ],
+      "pitfall": "Péjoratif : on reproche à quelqu'un d'être timoré.",
+      "cloze": "Ne sois pas si ___ : demande-lui simplement une augmentation.",
+      "situations": [
+        {
+          "prompt": "Ton chef n'ose jamais trancher de peur d'être critiqué, et repousse toutes les décisions. Il est…"
+        }
+      ],
+      "source": {
+        "definition": "Qui est trop disposé à la crainte, au scrupule."
+      }
+    }
+  ],
+  "relecture": {
+    "date": "2026-11-07",
+    "ok": 24,
+    "reperes": [
+      "blase",
+      "deference",
+      "exhorter",
+      "illusoire",
+      "impassible",
+      "narquois",
+      "nonchalant",
+      "refuter",
+      "sarcastique"
+    ],
+    "retires": [],
+    "raison": "trop faciles (déjà employés)"
+  }
+}
